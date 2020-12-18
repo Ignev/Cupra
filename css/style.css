@@ -42,8 +42,8 @@ button{
   position: absolute;
 }
 .container {
-  width: 230px;
-  height: 460px;
+  width: 320px;
+  height: 480px;
   box-sizing: border-box;
   overflow: hidden;
   left: 0;
@@ -62,69 +62,106 @@ button{
     display: none;
   }
   .container {
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 480px;
+    height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
+    top: 0;
     left: 0;
-    right: 0;
-    top: 11.5%;
     margin: auto;
   }
   .phone {
     width: 100%;
-    height: 480px;
+    height: 100vh;
     top: 0;
     left: 0;
   }
 }
 .slide {
   background: url(../img/car.jpg);
-  background-position: 79% 60%;
-  background-size: 960px 480px;
+  background-position: 82% 60%;
+  background-size: 1136px 568px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 15px;
-
 }
+@media screen and (max-width: 768px) {
+  .slide {
+    background-position: 95% 70%;
+    background-size: 2048px 1024px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .slide {
+    background-position: 79% 60%;
+    background-size: 1472px 736px;
+  }
+}
+@media screen and (max-width: 411px) {
+  .slide {
+    background-position: 79% 60%;
+    background-size: 1646px 823px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .slide {
+    background-position: 79% 60%;
+    background-size: 1280px 640px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .slide {
+    background-position: 79% 60%;
+    background-size: 1624px 812px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .slide {
+    background-position: 79% 60%;
+    background-size: 1136px 568px;
+  }
+}
+
 .slider__popup{
-  background: #fff;
+  background: #000;
   width: 100%;
-  height: 480px;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  color: #000;
+  color: #fff;
   display: none;
   justify-content: center;
   align-items: center;
   padding: 10px;
 }
+.popup__text{
+  padding: 35px;
+}
 .popup__close{
   position: absolute;
   right: 5px;
   top: 5px;
-}
-.popup__close{
   width: 15px;
   height: 15px;
 }
+.close__media{
+  fill: #fff;
+}
 .slide__text {
   margin-bottom: 5px;
-  font-size: 18px;
+  font-size: 1.5em;
   text-transform: uppercase;
 }
 .slider__btn{
-  width: 110px;
+  width: 40%;
   margin-bottom: 10px;
 }
 .btn__media{
-  width: 110px;
+  width: 100%;
 }
 .slide__bottom {
   display: flex;
@@ -132,8 +169,12 @@ button{
   justify-content: space-between;
 }
 .bottom__text{
-  font-size: 5px;
+  font-size: 0.2rem;
+}
+.bottom__logo{
+  width: 25%;
 }
 .logo__media{
   display: flex;
+  width: 100%;
 }
