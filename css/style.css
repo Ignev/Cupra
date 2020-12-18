@@ -88,6 +88,12 @@ button{
   justify-content: flex-end;
   padding: 15px;
 }
+@media screen and (max-width: 1080px){
+  .slide {
+    background-position: 95% 70%;
+    background-size: 4680px 2340px;
+  }
+}
 @media screen and (max-width: 768px) {
   .slide {
     background-position: 95% 70%;
@@ -172,9 +178,12 @@ button{
   font-size: 0.2rem;
 }
 .bottom__logo{
-  width: 25%;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .logo__media{
   display: flex;
-  width: 98%;
+  width: 95%;
 }
