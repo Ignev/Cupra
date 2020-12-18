@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "Cupra";
+  src: url("../fonts/Cupra-Regular.woff2") format("woff2"),
+  url("../fonts/Cupra-Regular.woff") format("woff"),
+  url("../fonts/Cupra-Regular.otf") format("otf"),
+  url("../fonts/Cupra-Regular.ttf") format("ttf"),
+  url("../fonts/Cupra-Regular.eot") format("eot");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  background: #1a4f45;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: "Cupra", sans-serif;
+}
+button{
+  background: 0;
+}
+.phone {
+  position: relative;
+  height: 621px;
+  width: 361px;
+  display: flex;
+  justify-content: center;
+}
+.phone__media {
+  height: 621px;
+  width: 361px;
+  position: absolute;
+}
+.container {
+  width: 230px;
+  height: 460px;
+  box-sizing: border-box;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  top: 11.5%;
+  margin: auto;
+  z-index: 20;
+}
+@media screen and (max-width: 900px) {
+  body {
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+  .phone__media {
+    display: none;
+  }
+  .container {
+    top: 0;
+    left: 0;
+    width: 215px;
+    height: 480px;
+    box-sizing: border-box;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 11.5%;
+    margin: auto;
+  }
+  .phone {
+    width: 320px;
+    height: 480px;
+    top: 0;
+    left: 0;
+  }
+}
+.slide {
+  background: url(../img/car.jpg);
+  background-position: 79% 60%;
+  background-size: 960px 480px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+
+}
+.slide__text {
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.slider__btn{
+  width: 110px;
+  margin-bottom: 10px;
+}
+.btn__media{
+  width: 110px;
+}
+.slide__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.bottom__text{
+  font-size: 5px;
+}
+.logo__media{
+  display: flex;
+}
