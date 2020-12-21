@@ -1,10 +1,10 @@
 @font-face {
   font-family: "Cupra";
   src: url("../fonts/Cupra-Regular.woff2") format("woff2"),
-  url("../fonts/Cupra-Regular.woff") format("woff"),
-  url("../fonts/Cupra-Regular.otf") format("otf"),
-  url("../fonts/Cupra-Regular.ttf") format("ttf"),
-  url("../fonts/Cupra-Regular.eot") format("eot");
+    url("../fonts/Cupra-Regular.woff") format("woff"),
+    url("../fonts/Cupra-Regular.otf") format("otf"),
+    url("../fonts/Cupra-Regular.ttf") format("ttf"),
+    url("../fonts/Cupra-Regular.eot") format("eot");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,7 +26,7 @@ body {
   color: #fff;
   font-family: "Cupra", sans-serif;
 }
-button{
+button {
   background: 0;
 }
 .phone {
@@ -52,7 +52,7 @@ button{
   margin: auto;
   z-index: 20;
 }
-@media screen and (max-width: 900px) and (orientation:portrait) {
+@media screen and (max-width: 900px) and (orientation: portrait) {
   body {
     align-items: center;
     justify-content: center;
@@ -69,12 +69,20 @@ button{
     top: 0;
     left: 0;
     margin: auto;
+    overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100);
+  }
+  .slide{
+    overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100);
   }
   .phone {
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
+    overflow: hidden;
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 .slide {
@@ -89,8 +97,7 @@ button{
   padding: 15px;
 }
 
-
-.slider__popup{
+.slider__popup {
   background: #000;
   width: 100%;
   height: 100%;
@@ -103,17 +110,17 @@ button{
   align-items: center;
   padding: 10px;
 }
-.popup__text{
+.popup__text {
   padding: 35px;
 }
-.popup__close{
+.popup__close {
   position: absolute;
   right: 5px;
   top: 5px;
   width: 5%;
   height: 5%;
 }
-.close__media{
+.close__media {
   fill: #fff;
 }
 .slide__text {
@@ -121,11 +128,11 @@ button{
   font-size: 1.5em;
   text-transform: uppercase;
 }
-.slider__btn{
+.slider__btn {
   width: 40%;
   margin-bottom: 10px;
 }
-.btn__media{
+.btn__media {
   width: 100%;
 }
 .slide__bottom {
@@ -133,23 +140,20 @@ button{
   align-items: flex-end;
   justify-content: space-between;
 }
-.bottom__text{
-  font-size: 0.2rem;
-}
-.bottom__logo{
+.bottom__logo {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.bottom__text{
+.bottom__text {
   font-size: 0.2rem;
 }
-.logo__media{
+.logo__media {
   display: flex;
   width: 95%;
 }
-@media screen and (max-width: 1080px) and (orientation:portrait){
+@media screen and (max-width: 1080px) and (orientation: portrait) {
   .slide {
     background-position: 79% 80%;
     background-size: 4680px 2340px;
@@ -177,25 +181,25 @@ button{
     top: 0;
     left: 0;
   }
-  .popup__text{
+  .popup__text {
     padding: 35px;
-    font-size: 2rem;
+    font-size: 5vw;
   }
   .slide__text {
     margin-bottom: 5px;
-    font-size: 6rem;
+    font-size: 8.25vw;
     text-transform: uppercase;
   }
-  .bottom__text{
-    font-size: 1.1rem;
+  .bottom__text {
+    font-size: 2vw;
   }
 }
-@media screen and (max-width: 768px) and (orientation:portrait) {
+@media screen and (max-width: 768px) and (orientation: portrait) {
   .slide {
     background-position: 95% 70%;
     background-size: 2048px 1024px;
   }
-  .popup__text{
+  .popup__text {
     padding: 35px;
     font-size: 2rem;
   }
@@ -204,11 +208,11 @@ button{
     font-size: 6rem;
     text-transform: uppercase;
   }
-  .bottom__text{
+  .bottom__text {
     font-size: 1.1rem;
   }
 }
-@media screen and (max-width: 414px) and (orientation:portrait) {
+@media screen and (max-width: 414px) and (orientation: portrait) {
   .slide {
     background-position: 79% 60%;
     background-size: 1472px 736px;
@@ -218,11 +222,11 @@ button{
     font-size: 1.5rem;
     text-transform: uppercase;
   }
-  .bottom__text{
+  .bottom__text {
     font-size: 0.3rem;
   }
 }
-@media screen and (max-width: 411px) and (orientation:portrait) {
+@media screen and (max-width: 411px) and (orientation: portrait) {
   .slide {
     background-position: 79% 60%;
     background-size: 1646px 823px;
@@ -232,16 +236,16 @@ button{
     font-size: 1.5rem;
     text-transform: uppercase;
   }
-  .bottom__text{
+  .bottom__text {
     font-size: 0.3rem;
   }
 }
-@media screen and (max-width: 360px) and (orientation:portrait) {
+@media screen and (max-width: 360px) and (orientation: portrait) {
   .slide {
     background-position: 79% 60%;
     background-size: 1280px 640px;
   }
-  .popup__text{
+  .popup__text {
     padding: 35px;
     font-size: 1rem;
   }
@@ -250,11 +254,11 @@ button{
     font-size: 1.5rem;
     text-transform: uppercase;
   }
-  .bottom__text{
+  .bottom__text {
     font-size: 0.3rem;
   }
 }
-@media screen and (max-width: 375px) and (orientation:portrait) {
+@media screen and (max-width: 375px) and (orientation: portrait) {
   .slide {
     background-position: 79% 60%;
     background-size: 1624px 812px;
@@ -264,11 +268,11 @@ button{
     font-size: 1.5rem;
     text-transform: uppercase;
   }
-  .bottom__text{
+  .bottom__text {
     font-size: 0.3rem;
   }
 }
-@media screen and (max-width: 320px) and (orientation:portrait) {
+@media screen and (max-width: 320px) and (orientation: portrait) {
   .slide {
     background-position: 79% 60%;
     background-size: 1136px 568px;
@@ -278,7 +282,7 @@ button{
     font-size: 1.5rem;
     text-transform: uppercase;
   }
-  .bottom__text{
+  .bottom__text {
     font-size: 0.3rem;
   }
 }
