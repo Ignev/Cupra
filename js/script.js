@@ -29,6 +29,21 @@ Hammer(container).on("swipeleft", (e) => {
   }
 });
 
+if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", function (event) {
+        tilt([event.beta, event.gamma]);
+        console.log(event.gamma);
+    }, true);
+} else if (window.DeviceMotionEvent) {
+    window.addEventListener('devicemotion', function (event) {
+        tilt([event.acceleration.x * 2, event.acceleration.y * 2]);
+    }, true);
+} else {
+    window.addEventListener("MozOrientation", function (orientation) {
+        tilt([orientation.x * 50, orientation.y * 50]);
+    }, true);
+}
+
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
