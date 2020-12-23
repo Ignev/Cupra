@@ -17,9 +17,9 @@
   box-sizing: border-box;
 }
 body {
-  width: 100vw;
+  width: 100%;
   background: #1a4f45;
-  height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,9 +148,6 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
-  }
-  .container{
     overflow: hidden;
   }
   .phone {
