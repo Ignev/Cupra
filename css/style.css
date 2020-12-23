@@ -146,18 +146,16 @@ button {
     top: 0;
     left: 0;
     overflow: hidden;
-    /* height: calc(var(--vh, 1vh) * 100); */
   }
   .container{
     overflow: hidden;
-    /* height: calc(var(--vh, 1vh) * 100); */
   }
   .phone {
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
-    /* height: calc(var(--vh, 1vh) * 100); */
+    height: calc(var(--vh, 1vh) * 100);
   }
   .popup__text {
     padding: 35px;
@@ -190,18 +188,16 @@ button {
     left: 0;
     margin: auto;
     overflow: hidden;
-    /* height: calc(var(--vh, 1vh) * 100); */
   }
   .container{
     overflow: hidden;
-    /* height: calc(var(--vh, 1vh) * 100); */
   }
   .phone {
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
-    /* height: calc(var(--vh, 1vh) * 100); */
+    height: calc(var(--vh, 1vh) * 100);
   }
 }
 @media screen and (max-width: 768px) and (orientation: portrait) {

@@ -18,11 +18,6 @@ Hammer(slide).on("swiperight", (e) => {
   else{
     wcont = 0;
   }
-  console.log(1);
-  console.log(wh);
-  console.log(wcont);
-  console.log(container.style.backgroundPositionX);
-  console.log(i);
 });
 Hammer(slide).on("swipeleft", (e) => {
   wcont += wh;
@@ -32,20 +27,15 @@ Hammer(slide).on("swipeleft", (e) => {
   else{
     wcont = i;
   }
-  console.log(2);
-  console.log(wh);
-  console.log(wcont);
-  console.log(container.style.backgroundPositionX);
-  console.log(i);
 });
 
-// let vh = window.innerHeight * 0.01;
-// document.documentElement.style.setProperty('--vh', `${vh}px`);
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-// window.addEventListener('resize', () => {
-//   let vh = window.innerHeight * 0.01;
-//   document.documentElement.style.setProperty('--vh', `${vh}px`);
-// });
+window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
 
 text__btn.addEventListener("click", () => {
   slider__popup.style.display = "flex";
