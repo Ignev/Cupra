@@ -10,7 +10,7 @@ let wcont = i;
 container.style.backgroundPositionX = i + "%";
 
 console.log(i);
-Hammer(slide).on("swiperight", (e) => {
+Hammer(container).on("swiperight", (e) => {
   wcont -= wh;
   if(wcont >= 0){
     container.style.backgroundPositionX = wcont + "%";
@@ -19,7 +19,7 @@ Hammer(slide).on("swiperight", (e) => {
     wcont = 0;
   }
 });
-Hammer(slide).on("swipeleft", (e) => {
+Hammer(container).on("swipeleft", (e) => {
   wcont += wh;
   if(wcont <= i ){
     container.style.backgroundPositionX = wcont + "%";
