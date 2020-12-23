@@ -1,30 +1,43 @@
 let pos = 0;
-let wh = slide.offsetWidth;
-let wcont = -slide.offsetWidth*2
-console.log(container.style.backgroundSize);
-container.style.backgroundPositionX = -slide.offsetWidth*2 + "px";
-Hammer(slide).on('swiperight', (e)=>{
-    wcont += wh;
-    if(wcont > 0){
-        wcont = 0;
-    }
-    else{
-        container.style.backgroundPositionX = wcont + "px";
-    }
-    console.log(1);
-})
-Hammer(slide).on('swipeleft', (e)=>{
-    wcont -= wh;
-    if(wcont < -slide.offsetWidth*2){
-        wcont = -slide.offsetWidth*2;
-    }
-    else{
-        container.style.backgroundPositionX = wcont + "px";
-    }
-   console.log(2);
-})
+let i = +window
+  .getComputedStyle(container)
+  .getPropertyValue("background-position")
+  .split("%")[0];
 
 
+let wh = i/2;
+let wcont = i;
+container.style.backgroundPositionX = i + "%";
+
+console.log(i);
+Hammer(slide).on("swiperight", (e) => {
+  wcont -= wh;
+  if(wcont >= 0){
+    container.style.backgroundPositionX = wcont + "%";
+  }
+  else{
+    wcont = 0;
+  }
+  console.log(1);
+  console.log(wh);
+  console.log(wcont);
+  console.log(container.style.backgroundPositionX);
+  console.log(i);
+});
+Hammer(slide).on("swipeleft", (e) => {
+  wcont += wh;
+  if(wcont <= i ){
+    container.style.backgroundPositionX = wcont + "%";
+  }
+  else{
+    wcont = i;
+  }
+  console.log(2);
+  console.log(wh);
+  console.log(wcont);
+  console.log(container.style.backgroundPositionX);
+  console.log(i);
+});
 
 // let vh = window.innerHeight * 0.01;
 // document.documentElement.style.setProperty('--vh', `${vh}px`);
