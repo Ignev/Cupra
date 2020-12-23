@@ -42,6 +42,9 @@ button {
   position: absolute;
 }
 .container {
+  background: url(../img/car.jpg);
+  background-position: 82% 60%;
+  background-size: 1136px 568px;
   width: 320px;
   height: 480px;
   box-sizing: border-box;
@@ -51,41 +54,11 @@ button {
   top: 11.5%;
   margin: auto;
   z-index: 20;
+  transition: 0.5s ease;
 }
-@media screen and (max-width: 900px) and (orientation: portrait) {
-  body {
-    align-items: center;
-    justify-content: center;
-    background: #ffffff;
-  }
-  .phone__media {
-    display: none;
-  }
-  .container {
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    margin: auto;
-    overflow: hidden;
-    height: calc(var(--vh, 1vh) * 100);
-  }
-  .slide{
-    overflow: hidden;
-    height: calc(var(--vh, 1vh) * 100);
-  }
-  .phone {
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    height: calc(var(--vh, 1vh) * 100);
-  }
-}
+
 .slide {
-  background: url(../img/car.jpg);
+  background: 0;
   background-position: 82% 60%;
   background-size: 1136px 568px;
   width: 100%;
@@ -153,7 +126,7 @@ button {
   width: 95%;
 }
 @media screen and (max-width: 1080px) and (orientation: portrait) {
-  .slide {
+  .container {
     background-position: 79% 80%;
     background-size: 4680px 2340px;
   }
@@ -172,21 +145,19 @@ button {
     overflow: hidden;
     top: 0;
     left: 0;
-    margin: auto;
     overflow: hidden;
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
   }
-  .slide{
+  .container{
     overflow: hidden;
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
   }
   .phone {
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
-    height: calc(var(--vh, 1vh) * 100);
-  }
+    /* height: calc(var(--vh, 1vh) * 100); */
   }
   .popup__text {
     padding: 35px;
@@ -201,8 +172,40 @@ button {
     font-size: 2vw;
   }
 }
+@media screen and (max-width: 900px) and (orientation: portrait) {
+  body {
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+  }
+  .phone__media {
+    display: none;
+  }
+  .container {
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    /* height: calc(var(--vh, 1vh) * 100); */
+  }
+  .container{
+    overflow: hidden;
+    /* height: calc(var(--vh, 1vh) * 100); */
+  }
+  .phone {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    /* height: calc(var(--vh, 1vh) * 100); */
+  }
+}
 @media screen and (max-width: 768px) and (orientation: portrait) {
-  .slide {
+  .container {
     background-position: 95% 70%;
     background-size: 2048px 1024px;
   }
@@ -220,7 +223,7 @@ button {
   }
 }
 @media screen and (max-width: 414px) and (orientation: portrait) {
-  .slide {
+  .container {
     background-position: 79% 60%;
     background-size: 1472px 736px;
   }
@@ -234,7 +237,7 @@ button {
   }
 }
 @media screen and (max-width: 411px) and (orientation: portrait) {
-  .slide {
+  .container {
     background-position: 79% 60%;
     background-size: 1646px 823px;
   }
@@ -248,7 +251,7 @@ button {
   }
 }
 @media screen and (max-width: 360px) and (orientation: portrait) {
-  .slide {
+  .container {
     background-position: 79% 60%;
     background-size: 1280px 640px;
   }
@@ -266,7 +269,7 @@ button {
   }
 }
 @media screen and (max-width: 375px) and (orientation: portrait) {
-  .slide {
+  .container {
     background-position: 79% 60%;
     background-size: 1624px 812px;
   }
