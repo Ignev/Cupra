@@ -6,7 +6,7 @@ container.style.backgroundPositionX = -slide.offsetWidth*2 + "px";
 Hammer(slide).on('swiperight', (e)=>{
     wcont += wh;
     if(wcont > 0){
-
+        wcont = 0;
     }
     else{
         container.style.backgroundPositionX = wcont + "px";
@@ -15,8 +15,8 @@ Hammer(slide).on('swiperight', (e)=>{
 })
 Hammer(slide).on('swipeleft', (e)=>{
     wcont -= wh;
-    if(wcont < -slide.offsetWidth*2.7){
-
+    if(wcont < -slide.offsetWidth*2){
+        wcont = -slide.offsetWidth*2;
     }
     else{
         container.style.backgroundPositionX = wcont + "px";
