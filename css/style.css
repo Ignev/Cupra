@@ -47,14 +47,8 @@ button {
   background-size: 1136px 568px;
   width: 320px;
   height: 480px;
-  box-sizing: border-box;
-  overflow: hidden;
-  left: 0;
-  right: 0;
+  position: relative;
   top: 11.5%;
-  margin: auto;
-  z-index: 20;
-  transition: 0.5s ease;
 }
 
 .slide {
@@ -83,6 +77,7 @@ button {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  z-index: 20;
 }
 .popup__text {
   padding: 35px;
@@ -130,7 +125,7 @@ button {
 @media screen and (max-width: 1080px) and (orientation: portrait) {
   .container {
     background-position: 79% 80%;
-    background-size: 4680px 2340px;
+    background-size: 4800px 2400px;
   }
   body {
     align-items: center;
@@ -151,6 +146,13 @@ button {
     right: 0;
     bottom: 0;
     overflow: hidden;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    top: 11.5%;
+    margin: auto;
+    z-index: 20;
+    transition: 0.5s ease;
   }
   .phone {
     width: 100%;
