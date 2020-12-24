@@ -93,11 +93,7 @@ button {
 .close__media {
   fill: #fff;
 }
-.slide__text {
-  margin-bottom: 5px;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
+
 .slider__btn {
   width: 40%;
   margin-bottom: 10px;
@@ -107,7 +103,7 @@ button {
 }
 .slide__bottom {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
 }
 .bottom__logo {
@@ -303,4 +299,13 @@ button {
 .popup__text {
   padding: 35px;
   font-size: 5vw;
+}
+.slide__text {
+  margin-bottom: 5px;
+  font-size: 8vw;
+  text-transform: uppercase;
+  margin-bottom: 6%;
+}
+.bottom__text {
+  font-size: 2vw;
 }
