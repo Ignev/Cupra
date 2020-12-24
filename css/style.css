@@ -304,3 +304,7 @@ button {
     font-size: 0.3rem;
   }
 }
+.popup__text {
+  padding: 35px;
+  font-size: 5vw;
+}
