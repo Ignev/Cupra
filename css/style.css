@@ -164,10 +164,6 @@ button {
     position: relative;
     overflow: hidden;
   }
-  .popup__text {
-    padding: 35px;
-    font-size: 3vw;
-  }
   .slide__text {
     margin-bottom: 5px;
     text-transform: uppercase;
