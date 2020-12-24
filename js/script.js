@@ -7,16 +7,6 @@ let sizeBgContainer = +window
   .getComputedStyle(container)
   .getPropertyValue("background-size")
   .split("px")[0];
-window.addEventListener('resize', function() {
-    positionBgContainer = +window
-  .getComputedStyle(container)
-  .getPropertyValue("background-position")
-  .split("%")[0];
-  sizeBgContainer = +window
-  .getComputedStyle(container)
-  .getPropertyValue("background-size")
-  .split("px")[0];
-});
 
 let offsetSizeBg = positionBgContainer / 2;
 let currentPositionBg = positionBgContainer;
