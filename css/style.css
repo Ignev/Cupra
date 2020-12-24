@@ -94,10 +94,7 @@ button {
   fill: #fff;
 }
 
-.slider__btn {
-  width: 40%;
-  margin-bottom: 10px;
-}
+
 .btn__media {
   width: 100%;
 }
@@ -302,10 +299,14 @@ button {
 }
 .slide__text {
   margin-bottom: 5px;
-  font-size: 8vw;
+  font-size: 7.5vw;
   text-transform: uppercase;
   margin-bottom: 6%;
 }
 .bottom__text {
   font-size: 2vw;
+}
+.slider__btn {
+  width: 50%;
+  margin-bottom: 10px;
 }
