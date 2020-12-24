@@ -7,6 +7,17 @@ let sizeBgContainer = +window
   .getComputedStyle(container)
   .getPropertyValue("background-size")
   .split("px")[0];
+window.addEventListener('resize', function() {
+    positionBgContainer = +window
+  .getComputedStyle(container)
+  .getPropertyValue("background-position")
+  .split("%")[0];
+  sizeBgContainer = +window
+  .getComputedStyle(container)
+  .getPropertyValue("background-size")
+  .split("px")[0];
+});
+
 let offsetSizeBg = positionBgContainer / 2;
 let currentPositionBg = positionBgContainer;
 container.style.backgroundPositionX = positionBgContainer + "%";
@@ -69,21 +80,30 @@ popup__close.addEventListener("click", () => {
 // }
 // testDeviceOrientation();
 
-if (typeof DeviceOrientationEvent === 'function') {
-    console.log("Orientation is not supported");
-    window.addEventListener("deviceorientation",(e) => {
-        let horPos =  e.gamma;
-        test.innerHTML = e.gamma;
-        },
-        false
-      );
+if (typeof DeviceOrientationEvent === "function") {
+  console.log("Orientation is not supported");
+  window.addEventListener(
+    "deviceorientation",
+    (e) => {
+      let horPos = e.gamma;
+      test.innerHTML = e.gamma;
+    },
+    false
+  );
 } else {
-  
   console.log("DeviceOrientation is supported");
 
-  window.addEventListener("deviceorientation",(e) => {
-    let horPos =  e.gamma;
-    test.innerHTML = e.gamma;
+  window.addEventListener(
+    "deviceorientation",
+    (e) => {
+      let horPos = e.gamma;
+      test.innerHTML = e.gamma;
+      if(e.gamma){
+
+      }
+      if(e.gamma){
+
+      }
     },
     false
   );
