@@ -100,7 +100,7 @@ button {
 }
 .slide__bottom {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
 }
 .bottom__logo {
@@ -308,5 +308,5 @@ button {
 }
 .slider__btn {
   width: 50%;
-  margin-bottom: 10px;
+  margin-bottom: -2%;
 }
