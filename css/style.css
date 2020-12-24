@@ -49,6 +49,7 @@ button {
   height: 480px;
   position: relative;
   top: 11.5%;
+  transition: 0.5s ease;
 }
 
 .slide {
@@ -169,7 +170,7 @@ button {
   }
   .slide__text {
     margin-bottom: 5px;
-    font-size: 8.25vw;
+    font-size: 18px;
     text-transform: uppercase;
   }
   .bottom__text {
