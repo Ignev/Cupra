@@ -61,6 +61,8 @@ if (typeof DeviceOrientationEvent === "function") {
     "deviceorientation",
     (e) => {
       let horPos = e.gamma;
+        container.style.backgroundPositionX = Math.abs(e.gamma) + "%";
+        test.innerHTML = typeof e.gamma;
     },
     false
   );
