@@ -85,7 +85,7 @@ if (!window.DeviceMotionEvent) {
     else if(currentPositionBg < 0){
       currentPositionBg = 0;
     }
-    else if(currentPositionBg  == 0){
+    else if(e.gamma  == 0){
       currentPositionBg = positionBgContainer;
     }
     else{
@@ -93,7 +93,7 @@ if (!window.DeviceMotionEvent) {
     }
 
 
-     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(speen) + " " + "8" ;
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(speen) + " " + "9" ;
     })
     
      
