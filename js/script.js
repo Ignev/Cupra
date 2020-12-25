@@ -31,8 +31,8 @@ Hammer(container).on("swiperight", (e) => {
 });
 Hammer(container).on("swipeleft", (e) => {
   currentPositionBg =
-    currentPositionBg + (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
-  if (currentPositionBg <= 110) {
+    currentPositionBg + (Math.abs(e.deltaX) * 100 * 1.5) / sizeBgContainer;
+  if (currentPositionBg <= 100) {
     container.style.backgroundPositionX = currentPositionBg + "%";
   } else {
     currentPositionBg = 100;
