@@ -92,7 +92,7 @@ if (!window.DeviceMotionEvent) {
     }
 
 
-     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "8" ;
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "13" ;
     })
     
      
