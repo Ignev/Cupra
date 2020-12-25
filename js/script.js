@@ -16,15 +16,12 @@ console.log(currentPositionBg);
 
 console.log(positionBgContainer);
 Hammer(container).on("swiperight", (e) => {
-  if (currentPositionBg < (Math.abs(e.deltaX) * 100) / sizeBgContainer) {
+  if (currentPositionBg < (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer) {
     currentPositionBg = 0;
   } else {
     currentPositionBg =
-      currentPositionBg - (Math.abs(e.deltaX) * 100) / sizeBgContainer;
+      currentPositionBg - (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer;
   }
-  console.log((Math.abs(e.deltaX) * 100) / sizeBgContainer);
-  console.log(currentPositionBg);
-  console.log(sizeBgContainer);
 
   if (currentPositionBg >= 0) {
     container.style.backgroundPositionX = currentPositionBg + "%";
@@ -34,15 +31,12 @@ Hammer(container).on("swiperight", (e) => {
 });
 Hammer(container).on("swipeleft", (e) => {
   currentPositionBg =
-    currentPositionBg + (Math.abs(e.deltaX) * 100) / sizeBgContainer;
-  if (currentPositionBg <= 100) {
+    currentPositionBg + (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
+  if (currentPositionBg <= 110) {
     container.style.backgroundPositionX = currentPositionBg + "%";
   } else {
     currentPositionBg = 100;
   }
-  console.log((Math.abs(e.deltaX) * 100) / sizeBgContainer);
-  console.log(currentPositionBg);
-  console.log(sizeBgContainer);
 });
 
 let vh = window.innerHeight * 0.01;
@@ -81,7 +75,6 @@ if (typeof DeviceOrientationEvent === "function") {
   );
 } else {
   console.log("DeviceOrientation is supported");
-
   window.addEventListener(
     "deviceorientation",
     (e) => {
