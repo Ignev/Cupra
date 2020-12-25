@@ -79,7 +79,7 @@ if (typeof DeviceOrientationEvent === "function") {
       else{
         container.style.backgroundPositionX = e.gamma + "%";
       }
-      test.innerHTML = e.gamma + "/";
+      test.innerHTML = Math.floor(e.gamma) + "/";
     },
     false
   );
@@ -98,7 +98,7 @@ if (typeof DeviceOrientationEvent === "function") {
       else{
         container.style.backgroundPositionX = e.gamma + "%";
       }
-      test.innerHTML = e.gamma + "/";
+      test.innerHTML = Math.floor(e.gamma) + "/";
     },
     false
   );
