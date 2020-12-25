@@ -69,7 +69,16 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      let horPos = e.gamma;
+      currentPositionBg -= e.gamma;
+      if(e.gamma >= 0 ){
+        container.style.backgroundPositionX = positionBgContainer + "%";
+      }
+      else if(e.gamma <= -90){
+        container.style.backgroundPositionX = 0 + "%";
+      }
+      else{
+        container.style.backgroundPositionX = currentPositionBg + "%";
+      }
     },
     false
   );
