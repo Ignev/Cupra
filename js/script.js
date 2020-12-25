@@ -77,7 +77,7 @@ if (typeof DeviceOrientationEvent === "function") {
         container.style.backgroundPositionX = 0 + "%";
       }
       else{
-        container.style.backgroundPositionX = currentPositionBg + e.gamma/20000 + "%";
+        container.style.backgroundPositionX =  e.gamma + "%";
       }
       test.innerHTML = e.gamma;
     },
@@ -88,6 +88,7 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
+
       if(e.gamma >= 0 ){
         container.style.backgroundPositionX = positionBgContainer + "%";
       }
@@ -95,7 +96,7 @@ if (typeof DeviceOrientationEvent === "function") {
         container.style.backgroundPositionX = 0 + "%";
       }
       else{
-        container.style.backgroundPositionX = currentPositionBg + e.gamma/20000 + "%";
+        container.style.backgroundPositionX =  e.gamma + "%";
       }
       test.innerHTML = e.gamma;
     },
