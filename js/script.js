@@ -28,6 +28,7 @@ Hammer(container).on("swiperight", (e) => {
   } else {
     currentPositionBg = 0;
   }
+  test.innerHTML = currentPositionBg + " " + Math.floor(e.gamma);
 });
 Hammer(container).on("swipeleft", (e) => {
   currentPositionBg =
@@ -37,6 +38,7 @@ Hammer(container).on("swipeleft", (e) => {
   } else {
     currentPositionBg = 100;
   }
+  test.innerHTML = currentPositionBg + " " + Math.floor(e.gamma);
 });
 
 let vh = window.innerHeight * 0.01;
@@ -79,7 +81,7 @@ if (typeof DeviceOrientationEvent === "function") {
       else{
         container.style.backgroundPositionX = currentPositionBg + "%";
       }
-      test.innerHTML = currentPositionBg + " " + Math.floor(e.gamma);
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma);
     },
     false
   );
@@ -98,7 +100,7 @@ if (typeof DeviceOrientationEvent === "function") {
       else{
         container.style.backgroundPositionX = currentPositionBg + "%";
       }
-      test.innerHTML = currentPositionBg + " " + Math.floor(e.gamma);
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma);
     },
     false
   );
