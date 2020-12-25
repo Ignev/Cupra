@@ -94,7 +94,7 @@ if (typeof DeviceOrientationEvent === "function") {
         container.style.backgroundPositionX = 0 + "%";
       }
       else{
-        container.style.backgroundPositionX = currentPositionBg - e.gamma + "%";
+        container.style.backgroundPositionX = currentPositionBg + e.gamma + "%";
       }
     },
     false
