@@ -76,7 +76,6 @@ if (typeof DeviceOrientationEvent === "function") {
     "deviceorientation",
     (e) => {
       let horPos = e.gamma;
-      test.innerHTML = e.gamma;
     },
     false
   );
@@ -87,13 +86,6 @@ if (typeof DeviceOrientationEvent === "function") {
     "deviceorientation",
     (e) => {
       let horPos = e.gamma;
-      test.innerHTML = e.gamma;
-      if(e.gamma){
-
-      }
-      if(e.gamma){
-
-      }
     },
     false
   );
