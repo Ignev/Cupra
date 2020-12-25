@@ -77,7 +77,7 @@ if (typeof DeviceOrientationEvent === "function") {
         container.style.backgroundPositionX = 0 + "%";
       }
       else{
-        container.style.backgroundPositionX = currentPositionBg + e.gamma/200 + "%";
+        container.style.backgroundPositionX = currentPositionBg + e.gamma/20000 + "%";
       }
     },
     false
@@ -94,7 +94,7 @@ if (typeof DeviceOrientationEvent === "function") {
         container.style.backgroundPositionX = 0 + "%";
       }
       else{
-        container.style.backgroundPositionX = currentPositionBg + e.gamma/200 + "%";
+        container.style.backgroundPositionX = currentPositionBg + e.gamma/20000 + "%";
       }
     },
     false
