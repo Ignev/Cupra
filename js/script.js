@@ -71,7 +71,7 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      currentPositionBg -= e.gamma;
+      currentPositionBg += e.gamma;
       if(e.gamma >= 0 ){
         container.style.backgroundPositionX = positionBgContainer + "%";
       }
@@ -81,7 +81,7 @@ if (typeof DeviceOrientationEvent === "function") {
       else{
         container.style.backgroundPositionX = currentPositionBg + "%";
       }
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma);
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " +  "1";
     },
     false
   );
@@ -90,7 +90,7 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      currentPositionBg -= e.gamma;
+      currentPositionBg += e.gamma;
       if(e.gamma >= 0 ){
         container.style.backgroundPositionX = positionBgContainer + "%";
       }
@@ -100,7 +100,7 @@ if (typeof DeviceOrientationEvent === "function") {
       else{
         container.style.backgroundPositionX = currentPositionBg + "%";
       }
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma);
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + "1";
     },
     false
   );
