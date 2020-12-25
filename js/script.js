@@ -90,7 +90,7 @@ if (!window.DeviceMotionEvent) {
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-     test.innerHTML = Math.floor(e.gamma/700) + " " + "23" ;
+     test.innerHTML = e.gamma/700 + " " + "23" ;
     })
   });
 }
