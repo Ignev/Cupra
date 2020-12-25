@@ -72,14 +72,10 @@ if (!window.DeviceMotionEvent) {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
     if(event.rotationRate.gamma < 0){
-      setTimeout(()=>{
         currentPositionBg -= e.gamma/1000;
-      }, 50)
     }
     else{
-      setTimeout(()=>{
         currentPositionBg += e.gamma/1000;
-      }, 50)
     }
 
     if(currentPositionBg >= 100){
@@ -94,7 +90,7 @@ if (!window.DeviceMotionEvent) {
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "17" ;
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "18" ;
     })
   });
 }
