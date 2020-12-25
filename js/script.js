@@ -67,34 +67,34 @@ popup__close.addEventListener("click", () => {
 // testDeviceOrientation();
 
 if (!window.DeviceMotionEvent) {
-  
+  console.log();
 } else {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
     if(event.rotationRate.gamma < 0){
-      currentPositionBg -= e.gamma/2000;
+      setTimeout(()=>{
+        currentPositionBg -= e.gamma/2000;
+      }, 10)
     }
     else{
-      currentPositionBg += e.gamma/2000;
+      setTimeout(()=>{
+        currentPositionBg += e.gamma/2000;
+      }, 10)
     }
 
     if(currentPositionBg >= 100){
-      currentPositionBg = 100;
+      container.style.backgroundPositionX = 100 + "%";
     }
     else if(currentPositionBg < 0){
-      currentPositionBg = 0;
+      container.style.backgroundPositionX = 0 + "%";
     }
     else if(e.gamma  == 0){
-      currentPositionBg = positionBgContainer;
+      container.style.backgroundPositionX = positionBgContainer + "%";
     }
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-
-
-     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "13" ;
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "14" ;
     })
-    
-     
   });
 }
