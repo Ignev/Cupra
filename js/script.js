@@ -71,10 +71,9 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      let a = e.gamma;
       currentPositionBg += e.gamma;
         container.style.backgroundPositionX = currentPositionBg + "%";
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + a + " " +  "3";
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + deviceMotionEvent.rotationRate + " " +  "4";
     },
     false
   );
@@ -83,10 +82,9 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      let a = e.gamma;
       currentPositionBg += e.gamma;
         container.style.backgroundPositionX = currentPositionBg + "%";
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + a + " " + "3";
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + deviceMotionEvent.rotationRate + " " + "4";
     },
     false
   );
