@@ -66,26 +66,10 @@ popup__close.addEventListener("click", () => {
 // }
 // testDeviceOrientation();
 
-if (typeof DeviceOrientationEvent === "function") {
-  console.log("Orientation is not supported");
-  window.addEventListener(
-    "deviceorientation",
-    (e) => {
-      currentPositionBg += e.gamma;
-        container.style.backgroundPositionX = currentPositionBg + "%";
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + typeof e.rotationRate + " " +  "5";
-    },
-    false
-  );
+if (!window.DeviceMotionEvent) {
+  
 } else {
-  console.log("DeviceOrientation is supported");
-  window.addEventListener(
-    "deviceorientation",
-    (e) => {
-      currentPositionBg += e.gamma;
-        container.style.backgroundPositionX = currentPositionBg + "%";
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + typeof e.rotationRate + " " + "5";
-    },
-    false
-  );
+  window.addEventListener('devicemotion', function(event) {
+     test.innerHTML = Math.round(event.rotationRate.gamma);
+  });
 }
