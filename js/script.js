@@ -70,9 +70,7 @@ if (typeof DeviceOrientationEvent === "function") {
     "deviceorientation",
     (e) => {
       let horPos = e.gamma;
-      if(1){
-
-      }
+        container.style.backgroundPositionX = Math.abs(e.gamma) + "%";
     },
     false
   );
