@@ -71,11 +71,13 @@ if (!window.DeviceMotionEvent) {
 } else {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
-    if(event.rotationRate.gamma < 0){
-        currentPositionBg -= Math.floor(e.gamma/700);
+      let deg = e.gamma/700;
+      let speed = event.rotationRate.gamma;
+    if(speed < 0){
+        currentPositionBg -= deg;
     }
     else{
-        currentPositionBg += Math.floor(e.gamma/700);
+        currentPositionBg += deg;
     }
 
     if(currentPositionBg >= 100){
@@ -90,7 +92,7 @@ if (!window.DeviceMotionEvent) {
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-     test.innerHTML = "24" ;
+     test.innerHTML = "25" ;
     })
   });
 }
