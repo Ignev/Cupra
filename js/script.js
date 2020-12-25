@@ -73,17 +73,20 @@ if (!window.DeviceMotionEvent) {
     window.addEventListener('deviceorientation', function(e){
       let speen = event.rotationRate.gamma;
     if(speen < 0){
-      currentPositionBg -= e.gamma;
+      currentPositionBg += e.gamma;
     }
     else{
-      currentPositionBg += e.gamma;
+      currentPositionBg -= e.gamma;
     }
 
     if(currentPositionBg >= 100){
       currentPositionBg = 100;
     }
-    else if(currentPositionBg <= 0){
+    else if(currentPositionBg < 0){
       currentPositionBg = 0;
+    }
+    else if(currentPositionBg  == 0){
+      currentPositionBg = positionBgContainer;
     }
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
