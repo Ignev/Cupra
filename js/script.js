@@ -16,11 +16,11 @@ console.log(currentPositionBg);
 
 console.log(positionBgContainer);
 Hammer(container).on("swiperight", (e) => {
-  if (currentPositionBg < (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer) {
+  if (currentPositionBg < (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer) {
     currentPositionBg = 0;
   } else {
     currentPositionBg =
-      currentPositionBg - (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer;
+      currentPositionBg - (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
   }
 
   if (currentPositionBg >= 0) {
@@ -65,34 +65,31 @@ popup__close.addEventListener("click", () => {
 //     }
 // }
 // testDeviceOrientation();
-
+let speed;
 if (!window.DeviceMotionEvent) {
   console.log();
 } else {
-  window.addEventListener('devicemotion', function(event) {
-    window.addEventListener('deviceorientation', function(e){
-      let deg = e.gamma/700;
-      let speed = event.rotationRate.gamma;
-    if(speed < 0){
-        currentPositionBg -= deg;
-    }
-    else{
-        currentPositionBg += deg;
+  window.addEventListener("devicemotion", function (event) {
+    speed = event.rotationRate.gamma;
+  });
+  window.addEventListener("deviceorientation", function (e) {
+    let deg = e.gamma / 700;
+
+    if (speed < 0) {
+      currentPositionBg -= deg;
+    } else {
+      currentPositionBg += deg;
     }
 
-    if(currentPositionBg >= 100){
+    if (currentPositionBg >= 100) {
       currentPositionBg = 100;
-    }
-    else if(currentPositionBg < 0){
+    } else if (currentPositionBg < 0) {
       currentPositionBg = 0;
-    }
-    else if(e.gamma  == 0){
+    } else if (e.gamma == 0) {
       container.style.backgroundPositionX = positionBgContainer + "%";
-    }
-    else{
+    } else {
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-     test.innerHTML = "25" ;
-    })
+    test.innerHTML = "26";
   });
 }
