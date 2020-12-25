@@ -70,6 +70,26 @@ if (!window.DeviceMotionEvent) {
   
 } else {
   window.addEventListener('devicemotion', function(event) {
-     test.innerHTML = Math.round(event.rotationRate.gamma);
+    let speen = event.rotationRate.gamma;
+    if(speen < 0){
+      currentPositionBg -= event.gamma;
+    }
+    else{
+      currentPositionBg += event.gamma;
+    }
+
+    if(currentPositionBg >= 100){
+      currentPositionBg = 100;
+    }
+    else if(currentPositionBg <= 0){
+      currentPositionBg = 0;
+    }
+    else{
+      container.style.backgroundPositionX = currentPositionBg + "%";
+    }
+
+
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(event.gamma) + " " + Math.floor(speen) + " " + "7" ;
+     
   });
 }
