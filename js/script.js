@@ -73,10 +73,10 @@ if (!window.DeviceMotionEvent) {
     window.addEventListener('deviceorientation', function(e){
       let speen = event.rotationRate.gamma;
     if(speen < 0){
-      currentPositionBg -= e.gamma/20000;
+      currentPositionBg -= e.gamma/2000;
     }
     else{
-      currentPositionBg += e.gamma/20000;
+      currentPositionBg += e.gamma/2000;
     }
 
     if(currentPositionBg >= 100){
@@ -93,7 +93,7 @@ if (!window.DeviceMotionEvent) {
     }
 
 
-     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(speen) + " " + "7" ;
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(speen) + " " + "8" ;
     })
     
      
