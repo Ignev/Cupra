@@ -71,7 +71,7 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      currentPositionBg -= Math.abs(e.gamma);
+      currentPositionBg -= e.gamma;
       if(e.gamma >= 0 ){
         container.style.backgroundPositionX = positionBgContainer + "%";
       }
@@ -90,7 +90,7 @@ if (typeof DeviceOrientationEvent === "function") {
   window.addEventListener(
     "deviceorientation",
     (e) => {
-      currentPositionBg -= Math.abs(e.gamma);
+      currentPositionBg -= e.gamma;
       if(e.gamma >= 0 ){
         container.style.backgroundPositionX = positionBgContainer + "%";
       }
