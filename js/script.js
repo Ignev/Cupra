@@ -73,7 +73,7 @@ if (typeof DeviceOrientationEvent === "function") {
     (e) => {
       currentPositionBg += e.gamma;
         container.style.backgroundPositionX = currentPositionBg + "%";
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + deviceMotionEvent.rotationRate + " " +  "4";
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + e.rotationRate + " " +  "4";
     },
     false
   );
@@ -84,7 +84,7 @@ if (typeof DeviceOrientationEvent === "function") {
     (e) => {
       currentPositionBg += e.gamma;
         container.style.backgroundPositionX = currentPositionBg + "%";
-      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + deviceMotionEvent.rotationRate + " " + "4";
+      test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + e.rotationRate + " " + "4";
     },
     false
   );
