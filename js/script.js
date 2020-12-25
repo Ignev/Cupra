@@ -74,19 +74,19 @@ if (!window.DeviceMotionEvent) {
     if(event.rotationRate.gamma < 0){
       setTimeout(()=>{
         currentPositionBg -= e.gamma/2000;
-      }, 10)
+      }, 20)
     }
     else{
       setTimeout(()=>{
         currentPositionBg += e.gamma/2000;
-      }, 10)
+      }, 20)
     }
 
     if(currentPositionBg >= 100){
-      container.style.backgroundPositionX = 100 + "%";
+      currentPositionBg = 100;
     }
     else if(currentPositionBg < 0){
-      container.style.backgroundPositionX = 0 + "%";
+      currentPositionBg = 0;
     }
     else if(e.gamma  == 0){
       container.style.backgroundPositionX = positionBgContainer + "%";
@@ -94,7 +94,7 @@ if (!window.DeviceMotionEvent) {
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "14" ;
+     test.innerHTML = Math.floor(currentPositionBg) + " " + Math.floor(e.gamma) + " " + Math.floor(event.rotationRate.gamma) + " " + "15" ;
     })
   });
 }
