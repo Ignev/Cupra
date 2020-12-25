@@ -15,27 +15,18 @@ container.style.backgroundPositionX = positionBgContainer + "%";
 console.log(currentPositionBg);
 
 console.log(positionBgContainer);
-Hammer(container).on("swiperight", (e) => {
-  if (currentPositionBg < (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer) {
+Hammer(container).on("swiperight swipeleft", (e) => {
+  if (currentPositionBg < (e.deltaX * 100) * 2 / sizeBgContainer) {
     currentPositionBg = 0;
   } else {
     currentPositionBg =
-      currentPositionBg - (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer;
+      currentPositionBg - (e.deltaX * 100) * 2 / sizeBgContainer;
   }
 
-  if (currentPositionBg >= 0) {
+  if (currentPositionBg >= 0 && currentPositionBg <= 100) {
     container.style.backgroundPositionX = currentPositionBg + "%";
   } else {
     currentPositionBg = 0;
-  }
-});
-Hammer(container).on("swipeleft", (e) => {
-  currentPositionBg =
-    currentPositionBg + (Math.abs(e.deltaX) * 100 * 1.5) / sizeBgContainer;
-  if (currentPositionBg <= 100) {
-    container.style.backgroundPositionX = currentPositionBg + "%";
-  } else {
-    currentPositionBg = 100;
   }
 });
 
@@ -79,6 +70,9 @@ if (typeof DeviceOrientationEvent === "function") {
     "deviceorientation",
     (e) => {
       let horPos = e.gamma;
+      if(1){
+
+      }
     },
     false
   );
