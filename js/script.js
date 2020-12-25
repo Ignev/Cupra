@@ -90,7 +90,7 @@ if (!window.DeviceMotionEvent) {
     else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-     test.innerHTML = "21" ;
+     test.innerHTML = "22" ;
     })
   });
 }
