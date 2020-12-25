@@ -72,12 +72,24 @@ if (!window.DeviceMotionEvent) {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
     if(event.rotationRate.gamma < 0){
-        currentPositionBg -= e.gamma/1000;
+        currentPositionBg -= e.gamma/500;
     }
     else{
-        currentPositionBg += e.gamma/1000;
+        currentPositionBg += e.gamma/500;
     }
+
+    if(currentPositionBg >= 100){
+      currentPositionBg = 100;
+    }
+    else if(currentPositionBg < 0){
+      currentPositionBg = 0;
+    }
+    else if(e.gamma  == 0){
+      container.style.backgroundPositionX = positionBgContainer + "%";
+    }
+    else{
       container.style.backgroundPositionX = currentPositionBg + "%";
+    }
      test.innerHTML = "21" ;
     })
   });
