@@ -138,7 +138,7 @@ button {
 @media screen and (max-width: 1080px) and (orientation: portrait) {
   .container {
     background-position: 79% 80%;
-    background-size: 4600px 2300px;
+    background-size: 4600px 100%;
     background-repeat: no-repeat;
   }
   .headlights{
