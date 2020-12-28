@@ -316,6 +316,12 @@ button {
     background-position: 79% 60%;
     background-size: 1136px 568px;
   }
+  .headlights{
+    top: 8%;
+    width: 105vw;
+    left: 3%;
+    opacity: 1;
+  }
   .slide__text {
     margin-bottom: 5px;
     font-size: 1.5rem;
