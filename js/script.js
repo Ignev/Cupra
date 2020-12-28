@@ -53,11 +53,11 @@ popup__close.addEventListener("click", () => {
 
 let speed;
 if (!window.DeviceMotionEvent) {
-  test.innerHTML = "no ok";
+  test.innerHTML = "no ok 27";
 } else {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
-      test.innerHTML = "ok";
+      test.innerHTML = "ok 27";
       let deg = e.gamma/500;
       speed = event.rotationRate.gamma;
     if(speed < 0){
