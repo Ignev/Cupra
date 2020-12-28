@@ -42,27 +42,14 @@ button {
   position: absolute;
 }
 .container {
-  
+  background: url(../img/car.jpg);
   background-position: 82% 60%;
   background-size: 1136px 568px;
-  background: url(../img/car.jpg);
   width: 320px;
   height: 480px;
   position: relative;
   top: 11.5%;
   transition: 5s ease;
-  animation: headlights 1s ease;
-}
-@keyframes headlights{
-  0%{
-    background: url(../img/car.jpg);
-  }
-  50%{
-    background: url(../img/car-headlights.png);
-  }
-  100%{
-    background: url(../img/car.jpg);
-  }
 }
 .headlights{
   width: 100vw;
@@ -73,7 +60,17 @@ button {
   opacity: 0;
   
 }
-
+@keyframes headlights{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 .slide {
   background: 0;
   background-position: 82% 60%;
