@@ -58,7 +58,7 @@ if (!window.DeviceMotionEvent) {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
       test.innerHTML = "ok 28";
-      let deg = e.gamma/500;
+      let deg = e.gamma/300;
       speed = event.rotationRate.gamma;
     if(speed < 0){
         currentPositionBg -= deg;
