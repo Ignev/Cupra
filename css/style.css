@@ -139,6 +139,7 @@ button {
   .container {
     background-position: 79% 80%;
     background-size: 4600px 2300px;
+    background-repeat: no-repeat;
   }
   .headlights{
     top: 19.5%;
