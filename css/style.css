@@ -42,7 +42,7 @@ button {
   position: absolute;
 }
 .container {
-  background: url(../img/car1.jpg);
+  background: url(../img/car.jpg);
   background-position: 82% 60%;
   background-size: 1136px 568px;
   width: 320px;
@@ -52,18 +52,16 @@ button {
   transition: 5s ease;
 }
 .container::before{
-  background: url(../img/car.jpg);
+  background: url(../img/car1.jpg);
   content: "";
   width: 100%;
   height: 100%;
   position: absolute;
   background-position: 82% 60%;
   background-size: 1136px 568px;
-  width: 320px;
-  height: 480px;
   position: absolute;
-  top: -10%;
-  animation: headlights 0.7s ease;
+  animation: headlights 1s ease;
+  opacity: 0;
 }
 .headlights{
   width: 100vw;

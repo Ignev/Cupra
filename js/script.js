@@ -51,14 +51,15 @@ popup__close.addEventListener("click", () => {
   slider__popup.style.display = "none";
 });
 
+
 let speed;
 if (!window.DeviceMotionEvent) {
-  test.innerHTML = "no ok 36";
+  test.innerHTML = "no ok 37";
 } else {
   window.addEventListener('devicemotion', function(event) {
     window.addEventListener('deviceorientation', function(e){
-      test.innerHTML = "ok 36";
-      let deg = e.gamma/500;
+      test.innerHTML = "ok 37";
+      let deg = e.gamma/2;
       speed = event.rotationRate.gamma;
     if(speed < 0){
         currentPositionBg -= deg;
