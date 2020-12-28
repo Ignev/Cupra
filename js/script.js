@@ -12,15 +12,12 @@ let offsetSizeBg = positionBgContainer / 2;
 let currentPositionBg = positionBgContainer;
 container.style.backgroundPositionX = positionBgContainer + "%";
 
-console.log(currentPositionBg);
-
-console.log(positionBgContainer);
 Hammer(container).on("swiperight", (e) => {
-  if (currentPositionBg < (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer) {
+  if (currentPositionBg < (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer) {
     currentPositionBg = 0;
   } else {
     currentPositionBg =
-      currentPositionBg - (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
+      currentPositionBg - (Math.abs(e.deltaX) * 100) * 2 / sizeBgContainer;
   }
 
   if (currentPositionBg >= 0) {
@@ -28,7 +25,6 @@ Hammer(container).on("swiperight", (e) => {
   } else {
     currentPositionBg = 0;
   }
-  test.innerHTML = currentPositionBg + " " + Math.floor(e.gamma);
 });
 Hammer(container).on("swipeleft", (e) => {
   currentPositionBg =
@@ -38,7 +34,6 @@ Hammer(container).on("swipeleft", (e) => {
   } else {
     currentPositionBg = 100;
   }
-  test.innerHTML = currentPositionBg + " " + Math.floor(e.gamma);
 });
 
 let vh = window.innerHeight * 0.01;
@@ -56,40 +51,32 @@ popup__close.addEventListener("click", () => {
   slider__popup.style.display = "none";
 });
 
-// function testDeviceOrientation() {
-//     if (typeof DeviceOrientationEvent !== 'function') {
-//         console.log('DeviceOrientationEvent not detected')
-//     }
-//     if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
-//         console.log('DeviceOrientationEvent.requestPermission not detected')
-//     }
-// }
-// testDeviceOrientation();
 let speed;
 if (!window.DeviceMotionEvent) {
-  console.log();
 } else {
-  window.addEventListener("devicemotion", function (event) {
-    speed = event.rotationRate.gamma;
-  });
-  window.addEventListener("deviceorientation", function (e) {
-    let deg = e.gamma / 700;
-
-    if (speed < 0) {
-      currentPositionBg -= deg;
-    } else {
-      currentPositionBg += deg;
+  window.addEventListener('devicemotion', function(event) {
+    window.addEventListener('deviceorientation', function(e){
+      let deg = e.gamma/700;
+      speed = event.rotationRate.gamma;
+    if(speed < 0){
+        currentPositionBg -= deg;
+    }
+    else{
+        currentPositionBg += deg;
     }
 
-    if (currentPositionBg >= 100) {
+    if(currentPositionBg >= 100){
       currentPositionBg = 100;
-    } else if (currentPositionBg < 0) {
+    }
+    else if(currentPositionBg < 0){
       currentPositionBg = 0;
-    } else if (e.gamma == 0) {
+    }
+    else if(e.gamma  == 0){
       container.style.backgroundPositionX = positionBgContainer + "%";
-    } else {
+    }
+    else{
       container.style.backgroundPositionX = currentPositionBg + "%";
     }
-    test.innerHTML = "26";
+    })
   });
 }
