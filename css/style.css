@@ -51,7 +51,26 @@ button {
   top: 11.5%;
   transition: 5s ease;
 }
-
+.headlights{
+  width: 100vw;
+  z-index: 20;
+  position: absolute;
+  top: 14.5%;
+  left: 8.7%;
+  opacity: 0;
+  animation: headlights 0.5s ease;
+}
+@keyframes headlights{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 .slide {
   background: 0;
   background-position: 82% 60%;
@@ -119,7 +138,10 @@ button {
 @media screen and (max-width: 1080px) and (orientation: portrait) {
   .container {
     background-position: 79% 80%;
-    background-size: 4800px 2400px;
+    background-size: 5000px 2500px;
+  }
+  .headlights{
+    top: 19.5%;
   }
   body {
     align-items: center;
@@ -246,11 +268,20 @@ button {
   .bottom__text {
     font-size: 0.3rem;
   }
+  .headlights{
+    opacity: 1;
+    top: 18%;
+    left: 16%;
+    width: 90vw;
+  }
 }
 @media screen and (max-width: 360px) and (orientation: portrait) {
   .container {
     background-position: 79% 60%;
     background-size: 1280px 640px;
+  }
+  .headlights{
+    top: 13%;
   }
   .popup__text {
     padding: 35px;
