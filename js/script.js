@@ -62,7 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
           let l = (sizeBgContainer * e.gamma)/180;
           
           let deg = e.beta/50;
-          test.innerHTML = "44 ";
+          test.innerHTML = "45 ";
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
