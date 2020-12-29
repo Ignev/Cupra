@@ -61,8 +61,8 @@ window.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("deviceorientation", function (e) {
           let l = (sizeBgContainer * e.gamma)/180;
           
-          let deg = e.gamma/15;
-          test.innerHTML = "43 ";
+          let deg = e.gamma/50;
+          test.innerHTML = "44 ";
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
