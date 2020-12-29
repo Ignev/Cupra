@@ -56,6 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(()=>{
     if (!window.DeviceMotionEvent) {
     } else {
+      test.innerHTML = "39";
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
           let l = (sizeBgContainer * e.gamma)/180;
