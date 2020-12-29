@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .getComputedStyle(container)
     .getPropertyValue("background-size")
     .split("px")[0];
-
+    console.log(sizeBgContainer);
   let offsetSizeBg = positionBgContainer / 2;
   let currentPositionBg = positionBgContainer;
   container.style.backgroundPositionX = positionBgContainer + "%";
@@ -58,7 +58,8 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          let deg = e.gamma / 500;
+          let l = (sizeBgContainer * e.gamma)/180;
+          let deg = l;
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
