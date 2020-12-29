@@ -60,17 +60,8 @@ button {
   background-position: 82% 60%;
   background-size: 1136px 568px;
   position: absolute;
-  animation: headlights 1s ease;
+  animation: headlights 1.2s ease;
   opacity: 0;
-}
-.headlights{
-  width: 100vw;
-  z-index: 20;
-  position: absolute;
-  top: 14.5%;
-  left: 8.7%;
-  opacity: 0;
-  animation: headlights 100s ease;
 }
 @keyframes headlights{
   0%{
