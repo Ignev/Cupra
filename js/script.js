@@ -60,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
           let l = (sizeBgContainer * e.gamma)/180;
+          test.innerHTML = "40 " + l;
           let deg = l;
           speed = event.rotationRate.gamma;
           if (speed < 0) {
