@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .getComputedStyle(container)
     .getPropertyValue("background-size")
     .split("px")[0];
-    console.log(sizeBgContainer);
+  console.log(sizeBgContainer);
   let offsetSizeBg = positionBgContainer / 2;
   let currentPositionBg = positionBgContainer;
   container.style.backgroundPositionX = positionBgContainer + "%";
@@ -53,22 +53,13 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   let speed;
-  setTimeout(()=>{
+  setTimeout(() => {
     if (!window.DeviceMotionEvent) {
     } else {
       test.innerHTML = "39";
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          let l = (sizeBgContainer * e.gamma)/180;
-          
-          let deg = (Math.abs(l) * 100 * 2) / sizeBgContainer;
-          speed = event.rotationRate.gamma;
-          if (speed < 0) {
-            currentPositionBg -= deg;
-          } else {
-            currentPositionBg += deg;
-          }
-  
+          currentPositionBg += deg;
           if (currentPositionBg >= 100) {
             currentPositionBg = 100;
           } else if (currentPositionBg < 0) {
@@ -81,5 +72,15 @@ window.addEventListener("DOMContentLoaded", () => {
         });
       });
     }
-  },1000)
+  }, 1000);
 });
+
+// let l = (sizeBgContainer * e.gamma) / 180;
+
+          // let deg = (Math.abs(l) * 100 * 2) / sizeBgContainer;
+          // speed = event.rotationRate.gamma;
+          // if (speed < 0) {
+          //   currentPositionBg -= deg;
+          // } else {
+            // currentPositionBg += deg;
+          // }
