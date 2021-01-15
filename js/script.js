@@ -58,8 +58,8 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          let deg = e.gamma / 15;
-          test.innerHTML = "44 ";
+          let deg = e.gamma / 200;
+          test.innerHTML = "45 ";
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
