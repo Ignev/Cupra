@@ -88,7 +88,7 @@ window.addEventListener("DOMContentLoaded", () => {
 //       });
 //     }
 //   }, 1000);
-// });
+});
 
 
 // let l = (sizeBgContainer * e.gamma) / 180;
