@@ -58,8 +58,18 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          let deg = e.gamma;
-          test.innerHTML = `48 ${Math.floor(deg)} ${Math.floor(currentPositionBg)}`;
+          let a;
+          if(e.gamma >= 20){
+            a = 20;
+          }
+          else if(e.gamma <= -20){
+            a = -20;
+          }
+          else{
+            a = e.gamma
+          }
+          let deg = a/1000;
+          test.innerHTML = `50 ${Math.floor(deg)} ${Math.floor(currentPositionBg)} ${Math.floor(speed)}`;
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
