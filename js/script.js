@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
             a = e.gamma
           }
           let deg = a/3000;
-          test.innerHTML = `53 ${Math.floor(deg)} ${Math.floor(currentPositionBg)} ${Math.floor(speed)}`;
+          test.innerHTML = `54 ${Math.floor(deg)} ${Math.floor(currentPositionBg)} ${Math.floor(speed)}`;
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
