@@ -58,30 +58,20 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          let deg = e.gamma/15;
-          test.innerHTML = "43 ";
+          let deg = e.gamma / 15;
+          test.innerHTML = "44 ";
           speed = event.rotationRate.gamma;
           if (speed < 0) {
             currentPositionBg -= deg;
           } else {
             currentPositionBg += deg;
           }
-  
-          if (currentPositionBg >= 100) {
-            currentPositionBg = 100;
-          } else if (currentPositionBg < 0) {
-            currentPositionBg = 0;
-          } else if (e.gamma == 0) {
-            container.style.backgroundPositionX = positionBgContainer + "%";
-          } else {
-            container.style.backgroundPositionX = currentPositionBg + "%";
-          }
+          container.style.backgroundPositionX = currentPositionBg + "%";
         });
       });
     }
   }, 1000);
 });
-
 
 // let l = (sizeBgContainer * e.gamma) / 180;
 //           let deg = (Math.abs(l) * 100 * 2) / sizeBgContainer;
