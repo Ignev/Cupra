@@ -52,43 +52,43 @@ window.addEventListener("DOMContentLoaded", () => {
     slider__popup.style.display = "none";
   });
 
-  let speed;
-  setTimeout(() => {
-    if (!window.DeviceMotionEvent) {
-    } else {
-      window.addEventListener("devicemotion", function (event) {
-        window.addEventListener("deviceorientation", function (e) {
-          let a;
-          if(e.gamma >= 10){
-            a = 10;
-          }
-          else if(e.gamma <= -10){
-            a = -10;
-          }
-          else{
-            a = e.gamma
-          }
-          let deg = a/3000;
-          // test.innerHTML = `54 ${Math.floor(deg)} ${Math.floor(currentPositionBg)} ${Math.floor(speed)}`;
-          speed = event.rotationRate.gamma;
-          if (speed < 0) {
-            currentPositionBg -= deg;
-          } else {
-            currentPositionBg += deg;
-          }
+//   let speed;
+//   setTimeout(() => {
+//     if (!window.DeviceMotionEvent) {
+//     } else {
+//       window.addEventListener("devicemotion", function (event) {
+//         window.addEventListener("deviceorientation", function (e) {
+//           let a;
+//           if(e.gamma >= 10){
+//             a = 10;
+//           }
+//           else if(e.gamma <= -10){
+//             a = -10;
+//           }
+//           else{
+//             a = e.gamma
+//           }
+//           let deg = a/3000;
+//           // test.innerHTML = `54 ${Math.floor(deg)} ${Math.floor(currentPositionBg)} ${Math.floor(speed)}`;
+//           speed = event.rotationRate.gamma;
+//           if (speed < 0) {
+//             currentPositionBg -= deg;
+//           } else {
+//             currentPositionBg += deg;
+//           }
   
-          if (currentPositionBg >= 100) {
-            currentPositionBg = 100;
-          } else if (currentPositionBg < 0) {
-            currentPositionBg = 0;
-          } else {
-            container.style.backgroundPositionX = currentPositionBg + "%";
-          }
-        });
-      });
-    }
-  }, 1000);
-});
+//           if (currentPositionBg >= 100) {
+//             currentPositionBg = 100;
+//           } else if (currentPositionBg < 0) {
+//             currentPositionBg = 0;
+//           } else {
+//             container.style.backgroundPositionX = currentPositionBg + "%";
+//           }
+//         });
+//       });
+//     }
+//   }, 1000);
+// });
 
 
 // let l = (sizeBgContainer * e.gamma) / 180;
