@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          test.innerHTML = `41 ${e.gamma}`;
+          test.innerHTML = `42 ${Math.floor(e.gamma)}`;
         });
       });
     }
