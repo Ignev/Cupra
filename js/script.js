@@ -58,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
-          let deg = e.gamma / 200;
+          let deg = e.gamma/200;
           test.innerHTML = "45 ";
           speed = event.rotationRate.gamma;
           if (speed < 0) {
@@ -66,12 +66,20 @@ window.addEventListener("DOMContentLoaded", () => {
           } else {
             currentPositionBg += deg;
           }
-          container.style.backgroundPositionX = currentPositionBg + "%";
+  
+          if (currentPositionBg >= 100) {
+            currentPositionBg = 100;
+          } else if (currentPositionBg < 0) {
+            currentPositionBg = 0;
+          } else {
+            container.style.backgroundPositionX = currentPositionBg + "%";
+          }
         });
       });
     }
   }, 1000);
 });
+
 
 // let l = (sizeBgContainer * e.gamma) / 180;
 //           let deg = (Math.abs(l) * 100 * 2) / sizeBgContainer;
