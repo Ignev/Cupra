@@ -56,13 +56,14 @@ window.addEventListener("DOMContentLoaded", () => {
   setTimeout(()=>{
     if (!window.DeviceMotionEvent) {
     } else {
-      test.innerHTML = "39";
+      
       window.addEventListener("devicemotion", function (event) {
         window.addEventListener("deviceorientation", function (e) {
           let l = (sizeBgContainer * e.gamma)/180;
           
           let deg = (Math.abs(l) * 100 * 2) / sizeBgContainer;
           speed = event.rotationRate.gamma;
+          test.innerHTML = `40 ${currentPositionBg} ${l} ${deg}`;
           if (speed < 0) {
             currentPositionBg -= deg;
           } else {
