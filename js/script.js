@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let offsetSizeBg = positionBgContainer / 2;
   let currentPositionBg = positionBgContainer;
   container.style.backgroundPositionX = positionBgContainer + "%";
-
+  console.log(currentPositionBg);
   Hammer(container).on("panright", (e) => {
     if (currentPositionBg < (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer) {
       currentPositionBg = 0;
@@ -26,15 +26,18 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       currentPositionBg = 0;
     }
+    console.log(currentPositionBg, 2);
   });
   Hammer(container).on("panleft", (e) => {
     currentPositionBg =
-      currentPositionBg + (Math.abs(e.deltaX/2) * 100 * 2) / sizeBgContainer;
-    if (currentPositionBg <= 100) {
+      currentPositionBg + (Math.abs(e.deltaX/2) * 100) / sizeBgContainer;
+    if (currentPositionBg < 100) {
       container.style.backgroundPositionX = currentPositionBg + "%";
     } else {
+      container.style.backgroundPositionX = 100 + "%"
       currentPositionBg = 100;
     }
+    console.log(currentPositionBg, 1);
   });
 
   let vh = window.innerHeight * 0.01;
