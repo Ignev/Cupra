@@ -14,12 +14,8 @@ window.addEventListener("DOMContentLoaded", () => {
   container.style.backgroundPositionX = positionBgContainer + "%";
 
   Hammer(container).on("panright", (e) => {
-    if (currentPositionBg < (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer) {
-      currentPositionBg = 0;
-    } else {
       currentPositionBg =
-        currentPositionBg - (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
-    }
+        currentPositionBg - (Math.abs(e.deltaX/2) * 100) / sizeBgContainer;
 
     if (currentPositionBg >= 0) {
       container.style.backgroundPositionX = currentPositionBg + "%";
@@ -29,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   Hammer(container).on("panleft", (e) => {
     currentPositionBg =
-      currentPositionBg + (Math.abs(e.deltaX) * 100 * 1.5) / sizeBgContainer;
+      currentPositionBg + (Math.abs(e.deltaX/2) * 100 * 2) / sizeBgContainer;
     if (currentPositionBg <= 100) {
       container.style.backgroundPositionX = currentPositionBg + "%";
     } else {
