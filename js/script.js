@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let currentPositionBg = positionBgContainer;
   container.style.backgroundPositionX = positionBgContainer + "%";
 
-  Hammer(container).on("swiperight", (e) => {
+  Hammer(container).on("panright", (e) => {
     if (currentPositionBg < (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer) {
       currentPositionBg = 0;
     } else {
@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
       currentPositionBg = 0;
     }
   });
-  Hammer(container).on("swipeleft", (e) => {
+  Hammer(container).on("panleft", (e) => {
     currentPositionBg =
       currentPositionBg + (Math.abs(e.deltaX) * 100 * 1.5) / sizeBgContainer;
     if (currentPositionBg <= 100) {
