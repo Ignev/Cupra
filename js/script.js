@@ -34,7 +34,6 @@ window.addEventListener("DOMContentLoaded", () => {
     if (currentPositionBg < 100) {
       container.style.backgroundPositionX = currentPositionBg + "%";
     } else {
-      container.style.backgroundPositionX = 100 + "%"
       currentPositionBg = 100;
     }
     console.log(currentPositionBg, 1);
