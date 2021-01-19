@@ -24,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: "Cupra", sans-serif;
+  font-family: "Cupra";
 }
 button {
   background: 0;
@@ -96,6 +96,8 @@ button {
 .content__text{
   font-size: 7vw;
   margin-bottom: 20px;
+  font-family: "Cupra";
+  text-transform: uppercase;
 }
 .content__btn{
   width: 50%;

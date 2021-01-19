@@ -1,4 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
+
+// Fix bug resize smartphone
+
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 
@@ -7,6 +10,9 @@ window.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
 
+
+// Popup
+
   text__btn.addEventListener("click", () => {
     content__popup.style.display = "flex";
     console.log(1);
@@ -14,6 +20,14 @@ window.addEventListener("DOMContentLoaded", () => {
   popup__close.addEventListener("click", () => {
     content__popup.style.display = "none";
   });
+
+  // Swape
+
+    Hammer(container).on("panright", (e) => {
+    
+  });
+
+
 });
 
 
