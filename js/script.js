@@ -89,8 +89,8 @@ let speed;
       });
     }
   }, 1000);
+  console.log(3);
 });
-
 
 
 
