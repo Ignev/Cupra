@@ -278,6 +278,12 @@ button {
     width: 90vw;
   }
 }
+@media screen and (max-width: 411px) and (orientation: portrait) {
+  .container, .container::before {
+    background-position: 79% 100%;
+    background-size: 1646px 823px;
+  }
+}
 @media screen and (max-width: 360px) and (orientation: portrait) {
   .container, .container::before {
     background-position: 79% 60%;
