@@ -1,6 +1,9 @@
 window.addEventListener("DOMContentLoaded", () => {
+  // Fix bug resize smartphone
 
-// Fix bug resize smartphone
+  window.addEventListener('click', ()=>{
+    console.log(22);
+  })
 
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -10,8 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
 
-
-// Popup
+  // Popup
 
   text__btn.addEventListener("click", () => {
     content__popup.style.display = "flex";
@@ -22,16 +24,58 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Swape
-
-    Hammer(container).on("panright", (e) => {
+  let currentPosition = -50;
+    let sizeBgContainer = bg.offsetWidth;
+  Hammer(content).on("panright", (e) => {
     
+    if(+bg.style.right.split("%")[0] <= -270){
+      currentPosition = -270;
+    }
+    else{
+      if(e.deltaX >= content.offsetWidth){
+        currentPosition -= 80;
+      }
+      else if(e.deltaX == content.offsetWidth/2){
+        currentPosition -= 50;
+      }
+      else{
+        currentPosition -= 5;
+      }
+      
+    }
+    if(+bg.style.right.split("%")[0] <= -270){
+      bg.style.right = `${-270}%`;
+    }
+    else{
+      bg.style.right = `${currentPosition}%`;
+    }
+    console.log(+bg.style.right.split("%")[0]);
   });
 
-
+  Hammer(content).on("panleft", (e) => {
+    if(+bg.style.right.split("%")[0] >= 0){
+      currentPosition = 0;
+    }
+    else{
+      if(-e.deltaX >= content.offsetWidth){
+        currentPosition += 80;
+      }
+      else if(-e.deltaX == content.offsetWidth/2){
+        currentPosition += 50;
+      }
+      else{
+        currentPosition += 5;
+      }
+    }
+    if(+bg.style.right.split("%")[0] >= 0){
+      bg.style.right = `${0}%`;
+    }
+    else{
+      bg.style.right = `${currentPosition}%`;
+    }
+    console.log(+bg.style.right.split("%")[0]);
+  });
 });
-
-
-
 
 //   let pos = 0;
 //   let positionBgContainer = +window
@@ -73,9 +117,6 @@ window.addEventListener("DOMContentLoaded", () => {
 //     console.log(currentPositionBg, 1);
 //   });
 
-
-
-
 // let speed;
 //   setTimeout(() => {
 //     if (!window.DeviceMotionEvent) {
@@ -83,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
 //     } else {
 //       window.addEventListener("devicemotion", function (event) {
 //         window.addEventListener("deviceorientation", function (e) {
-          
+
 //           let a;
 //           if(e.gamma >= 10){
 //             a = 10;
@@ -102,7 +143,7 @@ window.addEventListener("DOMContentLoaded", () => {
 //           } else {
 //             currentPositionBg += deg;
 //           }
-  
+
 //           if (currentPositionBg >= 100) {
 //             currentPositionBg = 100;
 //           } else if (currentPositionBg < 0) {
@@ -115,11 +156,3 @@ window.addEventListener("DOMContentLoaded", () => {
 //     }
 //   }, 1000);
 //   console.log(3);
-
-
-
-
-
-
-
-
