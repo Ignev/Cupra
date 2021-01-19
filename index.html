@@ -9,12 +9,13 @@
   <body>
     <div class="phone">
       <img src="img/iPhone6SPlus.png" alt="phone" class="phone__media" />
-      <div class="container" id="container">
-        <div class="slider__popup" id="slider__popup">
+
+      <div class="content">
+        <div class="content__popup" id="content__popup">
           <button class="popup__close" id="popup__close">
-            <img src="img/close.svg" alt="close" class="close__media">
+            <img src="img/close.svg" alt="close" class="close__media" />
           </button>
-          <p class="popup__text" >
+          <p class="popup__text">
             Weitere Informationen zum offiziellen Kraftstoffverbrauch und den
             offiziellen, spezifischen CO₂-Emissionen neuer Personenkraftwagen
             können dem „Leitfaden über den Kraftstoffverbrauch, die
@@ -25,33 +26,33 @@
             erhältlich ist.
           </p>
         </div>
-        <div class="slide" id="slide" >
-          
-          <div class="slide__text" id="test">
-            Der neue <br />
-            CUPRA Formentor.
+        <div class="content__text" id="test">
+          Der neue <br />
+          CUPRA Formentor.
+        </div>
+        <button class="content__btn">
+          <img class="btn__media" src="img/button.png" alt="button" />
+        </button>
+        <div class="content__bottom">
+          <div class="bottom__text">
+            CUPRA Formentor 2.0 TSI 228 kW <br />
+            (310 PS): Kraftstoffverbrauch <br />
+            Benzin, kombiniert: 7,7 l/100km; <br />
+            CO₂-Emissionen, kombiniert: <br />
+            175 g/km; CO₂-Effizienzklasse: D*. <br />
+            Abb. zeigt Sonderausstattung. <br />
+            <span class="text__btn" id="text__btn">DAT-Hinweis</span>
           </div>
-          <button class="slider__btn">
-            <img class="btn__media" src="img/button.png" alt="button" />
-          </button>
-          <div class="slide__bottom">
-            <div class="bottom__text">
-              CUPRA Formentor 2.0 TSI 228 kW <br />
-              (310 PS): Kraftstoffverbrauch <br />
-              Benzin, kombiniert: 7,7 l/100km; <br />
-              CO₂-Emissionen, kombiniert: <br />
-              175 g/km; CO₂-Effizienzklasse: D*. <br />
-              Abb. zeigt Sonderausstattung. <br />
-              <span class="text__btn" id="text__btn">DAT-Hinweis</span>
-            </div>
-            <div class="bottom__logo">
-              <img src="img/logo.svg" alt="logo" class="logo__media" />
-            </div>
+          <div class="bottom__logo">
+            <img src="img/logo.svg" alt="logo" class="logo__media" />
           </div>
+        </div>
+        <div class="bg">
+          <img src="img/car.jpg" alt="" class="bg__media" />
         </div>
       </div>
     </div>
-    <script src="js/hammer.js" ></script>
+    <script src="js/hammer.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

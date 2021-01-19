@@ -28,6 +28,7 @@ body {
 }
 button {
   background: 0;
+  border: 0;
 }
 .phone {
   position: relative;
@@ -41,103 +42,114 @@ button {
   width: 361px;
   position: absolute;
 }
-.container {
-  background: url(../img/car.jpg);
-  background-position: 82% 60%;
-  background-size: 1136px 568px;
+.content {
   width: 320px;
   height: 480px;
   position: relative;
   top: 11.5%;
   transition: 5s ease;
-}
-.container::before{
-  background: url(../img/car1.jpg);
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-position: 82% 60%;
-  background-size: 1136px 568px;
-  position: absolute;
-  animation: headlights 1.2s ease;
-  opacity: 0;
-}
-@keyframes headlights{
-  0%{
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-}
-.slide {
   background: 0;
-  background-position: 82% 60%;
-  background-size: 1136px 568px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 15px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  padding: 10px;
 }
-
-.slider__popup {
-  background: #000;
-  width: 100%;
+.bg{
   height: 100%;
   position: absolute;
+  right: -50%;
   top: 0;
-  left: 0;
-  color: #fff;
-  display: none;
+  z-index: -1;
+}
+.bg__media{
+  height: 100%;
+}
+
+/* Popup */
+
+.content__popup{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  z-index: 20;
+  background: #000;
+  padding: 25px;
+  display: none;
+  top: 0;
+  left: 0;
 }
-.popup__text {
-  padding: 35px;
-}
-.popup__close {
+.popup__close{
   position: absolute;
-  right: 5px;
   top: 5px;
-  width: 5%;
-  height: 5%;
+  right: 5px;
+  width: 20px;
+  height: 20px;
 }
-.close__media {
+.close__media{
   fill: #fff;
 }
+/* Top content */
 
-
-.btn__media {
+.content__text{
+  font-size: 7vw;
+  margin-bottom: 20px;
+}
+.content__btn{
+  width: 50%;
+}
+.btn__media{
   width: 100%;
 }
-.slide__bottom {
+
+/* Bottom content */
+
+.content__bottom{
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
-.bottom__logo {
+.bottom__text{
+  font-size: 2vw;
+  margin-bottom: 15px;
+}
+.bottom__logo{
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
-.bottom__text {
-  font-size: 0.2rem;
+.logo__media{
+  width: 100%;
+  height: 100%;
 }
-.logo__media {
-  display: flex;
-  width: 95%;
+@media screen and (max-width: 1080px) and (orientation: portrait){
+  .phone {
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    overflow: hidden;
+  }
+  .phone__media {
+    display: none;
+  }
+  .content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
 }
+
+/*
+
 @media screen and (max-width: 1080px) and (orientation: portrait) {
   .container, .container::before {
     background-position: 79% 80%;
@@ -227,6 +239,8 @@ button {
     overflow: hidden;
   }
 }
+
+
 @media screen and (max-width: 768px) and (orientation: portrait) {
   .container, .container::before {
     background-position: 95% 70%;
@@ -338,20 +352,5 @@ button {
     font-size: 0.3rem;
   }
 }
-.popup__text {
-  padding: 35px;
-  font-size: 5vw;
-}
-.slide__text {
-  margin-bottom: 5px;
-  font-size: 7vw;
-  text-transform: uppercase;
-  margin-bottom: 6%;
-}
-.bottom__text {
-  font-size: 2vw;
-}
-.slider__btn {
-  width: 50%;
-  margin-bottom: -2%;
-}
+
+*/
