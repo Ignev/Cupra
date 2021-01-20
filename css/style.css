@@ -25,7 +25,7 @@ body {
   align-items: center;
   color: #fff;
   font-family: "Cupra";
-  overflow-y:hidden;
+  overflow:hidden;
 }
 button {
   background: 0;
@@ -59,10 +59,11 @@ button {
 .bg{
   height: 100%;
   position: absolute;
-  right: -50%;
+  /* right: -50%; */
   top: 0;
   z-index: -1;
   transition: 1s ease;
+  overflow:hidden;
 }
 .bg__media{
   height: 100%;

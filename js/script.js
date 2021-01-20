@@ -1,10 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   // Fix bug resize smartphone
 
-  window.addEventListener('click', ()=>{
-    console.log(22);
-  })
-
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 
@@ -12,7 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
-
   // Popup
 
   text__btn.addEventListener("click", () => {
@@ -24,66 +19,56 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Swape
-  let currentPosition = -50;
   let sizeBgContainer = bg.offsetWidth;
+  bg.style.right = -(sizeBgContainer/100) * 15 + "px";
+  let currentPosition = -(sizeBgContainer/100) * 15;
+  console.log(currentPosition);
+  console.log(sizeBgContainer);
   Hammer(content).on("panright", (e) => {
     
-    if(currentPosition <= -260 || currentPosition - 100 <= -260){
-      currentPosition = -260;
+    if(currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 30)){
+      currentPosition = -(sizeBgContainer - (sizeBgContainer/100) * 30);
     }
     else{
-      if(e.deltaX >= content.offsetWidth){
-        currentPosition -= 80;
-      }
-      else if(e.deltaX > content.offsetWidth/1.2){
-        currentPosition -= 80;
-      }
-      else{
-        currentPosition -= 5;
-      }
-      
+        currentPosition -= (Math.abs(e.deltaX) * 100 *2 ) / sizeBgContainer;
     }
-    if(+bg.style.right.split("%")[0] <= -260){
-      bg.style.right = `${-260}%`;
+    if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - (sizeBgContainer/100) * 30)){
+      bg.style.right = `${-(sizeBgContainer - (sizeBgContainer/100) * 30)}px`;
     }
     else{
-      bg.style.right = `${currentPosition}%`;
+      bg.style.right = `${currentPosition}px`;
     }
+    console.log(currentPosition);
+    console.log(+bg.style.right.split("px")[0]);
   });
 
   Hammer(content).on("panleft", (e) => {
-    if(currentPosition >= 0 || currentPosition + 100 >= -260){
+    if(currentPosition >= 0){
       currentPosition = 0;
     }
-    else{
-      if(-e.deltaX >= content.offsetWidth ){
-        currentPosition += 80;
-      }
-      else if(-e.deltaX > content.offsetWidth/1.2){
-        currentPosition += 80;
-      }
       else{
-        currentPosition += 5;
+        currentPosition += (Math.abs(e.deltaX) * 100 *2 )/sizeBgContainer;
       }
-    }
-    if(+bg.style.right.split("%")[0] >= 0){
-      bg.style.right = `${0}%`;
+    
+    if(+bg.style.right.split("px")[0] >= 0){
+      bg.style.right = `${0}px`;
     }
     else{
-      bg.style.right = `${currentPosition}%`;
+      bg.style.right = `${currentPosition}px`;
     }
+    console.log(currentPosition);
   });
 
   // Gyroscope
 
-  if(!window.DeviceOrientationEvent){
-    console.log("No");
-    test.innerHTML = "No";
-  }
-  else{
-    console.log("Yes");
-    test.innerHTML = "Yes";
-  }
+  // if(!window.DeviceOrientationEvent){
+  //   console.log("No");
+  //   test.innerHTML = "No";
+  // }
+  // else{
+  //   console.log("Yes");
+  //   test.innerHTML = "Yes";
+  // }
 
 });
 
