@@ -61,6 +61,7 @@ button {
   right: -50%;
   top: 0;
   z-index: -1;
+  transition: 1s ease;
 }
 .bg__media{
   height: 100%;

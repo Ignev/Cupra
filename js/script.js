@@ -25,18 +25,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Swape
   let currentPosition = -50;
-    let sizeBgContainer = bg.offsetWidth;
+  let sizeBgContainer = bg.offsetWidth;
   Hammer(content).on("panright", (e) => {
     
-    if(+bg.style.right.split("%")[0] <= -270){
+    if(currentPosition <= -270 || currentPosition - 100 <= -270){
       currentPosition = -270;
     }
     else{
       if(e.deltaX >= content.offsetWidth){
         currentPosition -= 80;
       }
-      else if(e.deltaX == content.offsetWidth/2){
-        currentPosition -= 50;
+      else if(e.deltaX > content.offsetWidth/2){
+        currentPosition -= 80;
       }
       else{
         currentPosition -= 5;
@@ -49,19 +49,18 @@ window.addEventListener("DOMContentLoaded", () => {
     else{
       bg.style.right = `${currentPosition}%`;
     }
-    console.log(+bg.style.right.split("%")[0]);
   });
 
   Hammer(content).on("panleft", (e) => {
-    if(+bg.style.right.split("%")[0] >= 0){
+    if(currentPosition >= 0 || currentPosition + 100 >= -270){
       currentPosition = 0;
     }
     else{
-      if(-e.deltaX >= content.offsetWidth){
+      if(-e.deltaX >= content.offsetWidth ){
         currentPosition += 80;
       }
-      else if(-e.deltaX == content.offsetWidth/2){
-        currentPosition += 50;
+      else if(-e.deltaX > content.offsetWidth/2){
+        currentPosition += 80;
       }
       else{
         currentPosition += 5;
@@ -73,7 +72,6 @@ window.addEventListener("DOMContentLoaded", () => {
     else{
       bg.style.right = `${currentPosition}%`;
     }
-    console.log(+bg.style.right.split("%")[0]);
   });
 });
 
