@@ -25,6 +25,7 @@ body {
   align-items: center;
   color: #fff;
   font-family: "Cupra";
+  overflow-y:hidden;
 }
 button {
   background: 0;

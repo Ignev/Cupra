@@ -28,8 +28,8 @@ window.addEventListener("DOMContentLoaded", () => {
   let sizeBgContainer = bg.offsetWidth;
   Hammer(content).on("panright", (e) => {
     
-    if(currentPosition <= -270 || currentPosition - 100 <= -270){
-      currentPosition = -270;
+    if(currentPosition <= -260 || currentPosition - 100 <= -260){
+      currentPosition = -260;
     }
     else{
       if(e.deltaX >= content.offsetWidth){
@@ -43,8 +43,8 @@ window.addEventListener("DOMContentLoaded", () => {
       }
       
     }
-    if(+bg.style.right.split("%")[0] <= -270){
-      bg.style.right = `${-270}%`;
+    if(+bg.style.right.split("%")[0] <= -260){
+      bg.style.right = `${-260}%`;
     }
     else{
       bg.style.right = `${currentPosition}%`;
@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   Hammer(content).on("panleft", (e) => {
-    if(currentPosition >= 0 || currentPosition + 100 >= -270){
+    if(currentPosition >= 0 || currentPosition + 100 >= -260){
       currentPosition = 0;
     }
     else{
