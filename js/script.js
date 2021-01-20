@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if(e.deltaX >= content.offsetWidth){
         currentPosition -= 80;
       }
-      else if(e.deltaX > content.offsetWidth/2){
+      else if(e.deltaX > content.offsetWidth/1.2){
         currentPosition -= 80;
       }
       else{
@@ -59,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
       if(-e.deltaX >= content.offsetWidth ){
         currentPosition += 80;
       }
-      else if(-e.deltaX > content.offsetWidth/2){
+      else if(-e.deltaX > content.offsetWidth/1.2){
         currentPosition += 80;
       }
       else{
