@@ -73,6 +73,18 @@ window.addEventListener("DOMContentLoaded", () => {
       bg.style.right = `${currentPosition}%`;
     }
   });
+
+  // Gyroscope
+
+  if(!window.DeviceOrientationEvent){
+    console.log("No");
+    test.innerHTML = "No";
+  }
+  else{
+    console.log("Yes");
+    test.innerHTML = "Yes";
+  }
+
 });
 
 //   let pos = 0;
