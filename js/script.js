@@ -1,12 +1,13 @@
+
+let sizeBgContainer = bg.offsetWidth;
+let onePercentBgSize = sizeBgContainer/100;
+bg.style.right = -onePercentBgSize * 15 + "px";
+let currentPosition = -onePercentBgSize * 15;
+
 window.addEventListener("DOMContentLoaded", () => {
 
   // Swipe
 
-  
-  let sizeBgContainer = bg.offsetWidth;
-  let onePercentBgSize = sizeBgContainer/100;
-  bg.style.right = -onePercentBgSize * 15 + "px";
-  let currentPosition = -onePercentBgSize * 15;
   console.log(currentPosition);
   console.log(sizeBgContainer);
   Hammer(content).on("panright", (e) => {
