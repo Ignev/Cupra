@@ -20,20 +20,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Swape
   let sizeBgContainer = bg.offsetWidth;
-  bg.style.right = -(sizeBgContainer/100) * 15 + "px";
+  bg.style.right = -(bg.offsetWidth/100) * 15 + "px";
   let currentPosition = -(sizeBgContainer/100) * 15;
   console.log(currentPosition);
   console.log(sizeBgContainer);
   Hammer(content).on("panright", (e) => {
     
-    if(currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 30)){
-      currentPosition = -(sizeBgContainer - (sizeBgContainer/100) * 30);
+    if(currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 35)){
+      currentPosition = -(sizeBgContainer - (sizeBgContainer/100) * 35);
     }
     else{
-        currentPosition -= (Math.abs(e.deltaX) * 100 *2 ) / sizeBgContainer;
+        currentPosition -= (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
     }
-    if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - (sizeBgContainer/100) * 30)){
-      bg.style.right = `${-(sizeBgContainer - (sizeBgContainer/100) * 30)}px`;
+    if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - (sizeBgContainer/100) * 35)){
+      bg.style.right = `${-(sizeBgContainer - (sizeBgContainer/100) * 35)}px`;
     }
     else{
       bg.style.right = `${currentPosition}px`;
@@ -61,14 +61,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Gyroscope
 
-  // if(!window.DeviceOrientationEvent){
-  //   console.log("No");
-  //   test.innerHTML = "No";
-  // }
-  // else{
-  //   console.log("Yes");
-  //   test.innerHTML = "Yes";
-  // }
+  if(!window.DeviceOrientationEvent){
+    
+  }
+  else{
+   
+  }
 
 });
 
@@ -130,7 +128,7 @@ window.addEventListener("DOMContentLoaded", () => {
 //           else{
 //             a = e.gamma
 //           }
-//           let deg = a/3000;
+//           let deg = a/3500;
 //           // test.innerHTML = `54 ${Math.floor(deg)} ${Math.floor(currentPositionBg)} ${Math.floor(speed)}`;
 //           speed = event.rotationRate.gamma;
 //           if (speed < 0) {
