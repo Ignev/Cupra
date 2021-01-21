@@ -61,67 +61,44 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // Gyroscope
 
-  var TILT_LIMIT = 30;
-  var initialBeta;
-  var controlTypes = ['FULLTILT DeviceOrientation', 'Raw DeviceOrientation'];
-  var currentControlType = 0;
+  let speed;
+  setTimeout(() => {
+    if (!window.DeviceMotionEvent) {
+      console.log("error");
+    } else {
+      window.addEventListener("devicemotion", function (event) {
+        window.addEventListener("deviceorientation", function (e) {
 
-  if(!window.DeviceOrientationEvent){
-    
-  }
-  else{
-    testDeviceOrientation();
-		var deltaFixX = null;
-		var x1 = 0;
-		window.addEventListener('deviceorientation', function(event) {
-			detected = true;
-			
-			if (detected) {
-				var promise = FULLTILT.getDeviceOrientation({ 'type': 'game' });
+          let a;
+          if(e.gamma >= 10){
+            a = 10;
+          }
+          else if(e.gamma <= -10){
+            a = -10;
+          }
+          else{
+            a = e.gamma
+          }
+          let deg = a/3500;
+          speed = event.rotationRate.gamma;
+          if (speed < 0) {
+            currentPositionBg -= deg;
+          } else {
+            currentPositionBg += deg;
+          }
 
-				promise.then(function(orientationControl) {
-
-					orientationControl.listen(function() {
-
-						var euler;
-						
-						switch (currentControlType) {
-							case 1:
-								euler = orientationControl.getLastRawEventData();
-								break;
-							default:
-								euler = orientationControl.getScreenAdjustedEuler();
-						}
-						if (euler.beta > 85 && euler.beta < 95) {
-							return;
-						}
-						var tiltX = euler.gamma*-1;
-						var thresholdX=40;
-						var deltaX=tiltX;
-						if (deltaFixX==null) {
-							deltaFixX=tiltX-thresholdX/2;
-						}
-						var x = (deltaX - deltaFixX)/thresholdX;
-						if (x > 1) {
-							 x = 1;
-							 deltaFixX = deltaX-thresholdX;
-						}
-						if (x < 0) {
-							 x = 0;
-							 deltaFixX = deltaX;
-						}
-						x=1-x;
-						x=Math.round(x*100)/100;
-						if (Math.abs(x1-x)>0.025) {
-              bg.style.right = `${66*(x-0.5)}px`;
-							x1=x;
-						}
-
-					});
-				});
-			}
-		});
-  }
+          if (currentPositionBg >= 100) {
+            currentPositionBg = 100;
+          } else if (currentPositionBg < 0) {
+            currentPositionBg = 0;
+          } else {
+            container.style.backgroundPositionX = currentPositionBg + "%";
+          }
+        });
+      });
+    }
+  }, 1000);
+  console.log(3);
 
 });
 
