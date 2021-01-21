@@ -101,6 +101,7 @@ button {
   margin-bottom: 20px;
   font-family: "Cupra";
   text-transform: uppercase;
+  color: #fff;
 }
 .content__btn{
   width: 50%;
@@ -119,6 +120,7 @@ button {
 .bottom__text{
   font-size: 2vw;
   margin-bottom: 15px;
+  color: #fff;
 }
 .bottom__logo{
   width: 30%;
