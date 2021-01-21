@@ -87,18 +87,18 @@ window.addEventListener("DOMContentLoaded", () => {
             currentPositionBg += deg;
           }
 
-          if (currentPositionBg >= 100) {
+          if (currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 35)) {
             currentPositionBg = 100;
           } else if (currentPositionBg < 0) {
             currentPositionBg = 0;
           } else {
-            container.style.backgroundPositionX = currentPositionBg + "%";
+            bg.style.right = `${currentPositionBg}px`;
           }
         });
       });
     }
   }, 1000);
-  console.log(3);
+
 
 });
 
