@@ -1,39 +1,24 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // Fix bug resize smartphone
 
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
+  // Swipe
 
-  window.addEventListener("resize", () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  });
-  // Popup
-
-  text__btn.addEventListener("click", () => {
-    content__popup.style.display = "flex";
-    console.log(1);
-  });
-  popup__close.addEventListener("click", () => {
-    content__popup.style.display = "none";
-  });
-
-  // Swape
+  
   let sizeBgContainer = bg.offsetWidth;
-  bg.style.right = -(bg.offsetWidth/100) * 15 + "px";
-  let currentPosition = -(sizeBgContainer/100) * 15;
+  let onePercentBgSize = sizeBgContainer/100;
+  bg.style.right = -onePercentBgSize * 15 + "px";
+  let currentPosition = -onePercentBgSize * 15;
   console.log(currentPosition);
   console.log(sizeBgContainer);
   Hammer(content).on("panright", (e) => {
     
-    if(currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 35)){
-      currentPosition = -(sizeBgContainer - (sizeBgContainer/100) * 35);
+    if(currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)){
+      currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
     }
     else{
         currentPosition -= (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
     }
-    if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - (sizeBgContainer/100) * 35)){
-      bg.style.right = `${-(sizeBgContainer - (sizeBgContainer/100) * 35)}px`;
+    if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
+      bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
     }
     else{
       bg.style.right = `${currentPosition}px`;
@@ -59,46 +44,27 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log(currentPosition);
   });
 
+  // Fix bug resize smartphone
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+  window.addEventListener("resize", () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  });
+
+  // Popup
+
+  text__btn.addEventListener("click", () => {
+    content__popup.style.display = "flex";
+    console.log(1);
+  });
+  popup__close.addEventListener("click", () => {
+    content__popup.style.display = "none";
+  });
+
   // Gyroscope
-
-  let speed;
-  setTimeout(() => {
-    if (!window.DeviceMotionEvent) {
-      console.log("error");
-    } else {
-      window.addEventListener("devicemotion", function (event) {
-        window.addEventListener("deviceorientation", function (e) {
-
-          let a;
-          if(e.gamma >= 10){
-            a = 10;
-          }
-          else if(e.gamma <= -10){
-            a = -10;
-          }
-          else{
-            a = e.gamma
-          }
-          let deg = a/3500;
-          speed = event.rotationRate.gamma;
-          if (speed < 0) {
-            currentPositionBg -= deg;
-          } else {
-            currentPositionBg += deg;
-          }
-
-          if (currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 35)) {
-            currentPositionBg = 100;
-          } else if (currentPositionBg < 0) {
-            currentPositionBg = 0;
-          } else {
-            bg.style.right = `${currentPositionBg}px`;
-          }
-        });
-      });
-    }
-  }, 1000);
-
 
 });
 
@@ -181,3 +147,35 @@ window.addEventListener("DOMContentLoaded", () => {
 //     }
 //   }, 1000);
 //   console.log(3);
+  //     window.addEventListener("devicemotion", function (event) {
+  //       window.addEventListener("deviceorientation", function (e) {
+
+  //         let a;
+  //         if(e.gamma >= 10){
+  //           a = 10;
+  //         }
+  //         else if(e.gamma <= -10){
+  //           a = -10;
+  //         }
+  //         else{
+  //           a = e.gamma
+  //         }
+  //         let deg = a/3500;
+  //         speed = event.rotationRate.gamma;
+  //         if (speed < 0) {
+  //           currentPositionBg -= deg;
+  //         } else {
+  //           currentPositionBg += deg;
+  //         }
+
+  //         if (currentPosition <= -(sizeBgContainer - (sizeBgContainer/100) * 35)) {
+  //           currentPositionBg = 100;
+  //         } else if (currentPositionBg < 0) {
+  //           currentPositionBg = 0;
+  //         } else {
+  //           bg.style.right = `${currentPositionBg}px`;
+  //         }
+  //       });
+  //     });
+  //   }
+  // }, 1000);
