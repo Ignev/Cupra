@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
       currentPosition = 0;
     }
       else{
-        currentPosition += (Math.abs(e.deltaX) * 100 *2 )/sizeBgContainer;
+        currentPosition += (Math.abs(e.deltaX) * 100 * 2)/sizeBgContainer;
       }
     
     if(+bg.style.right.split("px")[0] >= 0){
@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
       }
       else{
-          currentPosition -= (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
+          currentPosition -= sizeBgContainer - onePercentBgSize * 5;
       }
       if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
         bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentPosition = 0;
       }
         else{
-          currentPosition += (Math.abs(e.deltaX) * 100 *2 )/sizeBgContainer;
+          currentPosition += sizeBgContainer - onePercentBgSize * 5;
         }
       
       if(+bg.style.right.split("px")[0] >= 0){
