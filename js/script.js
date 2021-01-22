@@ -76,7 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
       }
       else{
-          currentPosition -= sizeBgContainer - onePercentBgSize * 5;
+          currentPosition -= sizeBgContainer - onePercentBgSize * 3;
       }
       if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
         bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
@@ -90,7 +90,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentPosition = 0;
       }
         else{
-          currentPosition += sizeBgContainer - onePercentBgSize * 5;
+          currentPosition += sizeBgContainer - onePercentBgSize * 3;
         }
       
       if(+bg.style.right.split("px")[0] >= 0){
