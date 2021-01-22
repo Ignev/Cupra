@@ -1,7 +1,7 @@
 
 let sizeBgContainer = bg.offsetWidth;
-let onePercentBgSize = sizeBgContainer/100;
 bg.style.right = -onePercentBgSize * 15 + "px";
+let onePercentBgSize = sizeBgContainer/100;
 let currentPosition = -onePercentBgSize * 15;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -66,6 +66,8 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Gyroscope
+
+
 
 });
 
