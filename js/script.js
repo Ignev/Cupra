@@ -1,12 +1,14 @@
 
-let sizeBgContainer = bg.offsetWidth;
-bg.style.right = -onePercentBgSize * 15 + "px";
-let onePercentBgSize = sizeBgContainer/100;
-let currentPosition = -onePercentBgSize * 15;
+
 
 window.addEventListener("DOMContentLoaded", () => {
 
   // Swipe
+
+  let sizeBgContainer = bg.offsetWidth;
+  let onePercentBgSize = sizeBgContainer/100;
+  bg.style.right = -onePercentBgSize * 15 + "px";
+  let currentPosition = -onePercentBgSize * 15;
 
   console.log(currentPosition);
   console.log(sizeBgContainer);
@@ -66,8 +68,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Gyroscope
-
-
 
 });
 
