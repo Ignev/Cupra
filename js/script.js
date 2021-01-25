@@ -102,7 +102,22 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
   }
-  window.addEventListener('devicemotion', onMotionChange, true);
+  window.addEventListener('click', ()=>
+  {
+    // feature detect
+    if (typeof DeviceMotionEvent.requestPermission === 'function') {
+      DeviceMotionEvent.requestPermission()
+        .then(permissionState => {
+          if (permissionState === 'granted') {
+            window.addEventListener('devicemotion', onMotionChange, true);
+          }
+        })
+        .catch(console.error);
+    } else {
+      // handle regular non iOS 13+ devices
+    }
+  }) 
+  
 
 
 });
