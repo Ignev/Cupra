@@ -93,7 +93,20 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  document.addEventListener(() => {
+  button-img.addEventListener(() => {
+    if (typeof DeviceMotionEvent.requestPermission === "function") {
+      DeviceMotionEvent.requestPermission()
+        .then((permissionState) => {
+          if (permissionState === "granted") {
+            window.addEventListener("devicemotion", onMotionChange, true);
+          }
+        })
+        .catch(console.error);
+    } else {
+      window.addEventListener("devicemotion", onMotionChange, true);
+    }
+  });
+  button.addEventListener(() => {
     if (typeof DeviceMotionEvent.requestPermission === "function") {
       DeviceMotionEvent.requestPermission()
         .then((permissionState) => {
