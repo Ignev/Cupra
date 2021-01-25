@@ -93,32 +93,45 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  // button-img.addEventListener(() => {
-  //   if (typeof DeviceMotionEvent.requestPermission === "function") {
-  //     DeviceMotionEvent.requestPermission()
-  //       .then((permissionState) => {
-  //         if (permissionState === "granted") {
-  //           window.addEventListener("devicemotion", onMotionChange, true);
-  //         }
-  //       })
-  //       .catch(console.error);
-  //   } else {
-  //     window.addEventListener("devicemotion", onMotionChange, true);
-  //   }
-  // });
-  // button.addEventListener(() => {
-  //   if (typeof DeviceMotionEvent.requestPermission === "function") {
-  //     DeviceMotionEvent.requestPermission()
-  //       .then((permissionState) => {
-  //         if (permissionState === "granted") {
-  //           window.addEventListener("devicemotion", onMotionChange, true);
-  //         }
-  //       })
-  //       .catch(console.error);
-  //   } else {
-  //     window.addEventListener("devicemotion", onMotionChange, true);
-  //   }
-  // });
+  button-img.addEventListener(() => {
+    if (typeof DeviceMotionEvent.requestPermission === "function") {
+      DeviceMotionEvent.requestPermission()
+        .then((permissionState) => {
+          if (permissionState === "granted") {
+            window.addEventListener("devicemotion", onMotionChange, true);
+          }
+        })
+        .catch(console.error);
+    } else {
+      window.addEventListener("devicemotion", onMotionChange, true);
+    }
+  });
+  button.addEventListener(() => {
+    if (typeof DeviceMotionEvent.requestPermission === "function") {
+      DeviceMotionEvent.requestPermission()
+        .then((permissionState) => {
+          if (permissionState === "granted") {
+            window.addEventListener("devicemotion", onMotionChange, true);
+          }
+        })
+        .catch(console.error);
+    } else {
+      window.addEventListener("devicemotion", onMotionChange, true);
+    }
+  });
+  document.addEventListener(() => {
+    if (typeof DeviceMotionEvent.requestPermission === "function") {
+      DeviceMotionEvent.requestPermission()
+        .then((permissionState) => {
+          if (permissionState === "granted") {
+            window.addEventListener("devicemotion", onMotionChange, true);
+          }
+        })
+        .catch(console.error);
+    } else {
+      window.addEventListener("devicemotion", onMotionChange, true);
+    }
+  });
   window.addEventListener("devicemotion", onMotionChange, true);
 });
 
