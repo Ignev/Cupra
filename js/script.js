@@ -1,13 +1,11 @@
-window.addEventListener("DOMContentLoaded", () => {
-  // Swipe
-
-  let sizeBgContainer = bg.offsetWidth;
+let sizeBgContainer = bg.offsetWidth;
   let onePercentBgSize = sizeBgContainer / 100;
   bg.style.right = -onePercentBgSize * 15 + "px";
   let currentPosition = -onePercentBgSize * 15;
 
-  console.log(currentPosition);
-  console.log(sizeBgContainer);
+  // Swipe
+
+const swipe = () => {
   Hammer(content).on("panright", (e) => {
     if (currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)) {
       currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
@@ -40,9 +38,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     console.log(currentPosition);
   });
+}
 
-  // Fix bug resize smartphone
+ // Fix bug resize smartphone
 
+const resize = () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty("--vh", `${vh}px`);
 
@@ -50,9 +50,11 @@ window.addEventListener("DOMContentLoaded", () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
+}
 
-  // Popup
+// Popup
 
+const popup = () => {
   text__btn.addEventListener("click", () => {
     content__popup.style.display = "flex";
     console.log(1);
@@ -60,10 +62,11 @@ window.addEventListener("DOMContentLoaded", () => {
   popup__close.addEventListener("click", () => {
     content__popup.style.display = "none";
   });
+}
 
-  // Gyroscope
+// Gyroscope
 
-  function onMotionChange(e) {
+const gyroscope = (e) => {
     var ag = e.accelerationIncludingGravity;
     if (ag.x < 0) {
       if (currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)) {
@@ -92,47 +95,35 @@ window.addEventListener("DOMContentLoaded", () => {
         bg.style.right = `${currentPosition}px`;
       }
     }
+}
+
+// Test Gyroscope
+
+function onClick() {
+  // feature detect
+  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    DeviceMotionEvent.requestPermission()
+      .then(permissionState => {
+        if (permissionState === 'granted') {
+          window.addEventListener('devicemotion', gyroscope, true);
+        }
+      })
+      .catch(console.error);
+  } else {
+    window.addEventListener('devicemotion', gyroscope, true);
   }
-  button-img.addEventListener(() => {
-    if (typeof DeviceMotionEvent.requestPermission === "function") {
-      DeviceMotionEvent.requestPermission()
-        .then((permissionState) => {
-          if (permissionState === "granted") {
-            window.addEventListener("devicemotion", onMotionChange, true);
-          }
-        })
-        .catch(console.error);
-    } else {
-      window.addEventListener("devicemotion", onMotionChange, true);
-    }
-  });
-  button.addEventListener(() => {
-    if (typeof DeviceMotionEvent.requestPermission === "function") {
-      DeviceMotionEvent.requestPermission()
-        .then((permissionState) => {
-          if (permissionState === "granted") {
-            window.addEventListener("devicemotion", onMotionChange, true);
-          }
-        })
-        .catch(console.error);
-    } else {
-      window.addEventListener("devicemotion", onMotionChange, true);
-    }
-  });
-  document.addEventListener(() => {
-    if (typeof DeviceMotionEvent.requestPermission === "function") {
-      DeviceMotionEvent.requestPermission()
-        .then((permissionState) => {
-          if (permissionState === "granted") {
-            window.addEventListener("devicemotion", onMotionChange, true);
-          }
-        })
-        .catch(console.error);
-    } else {
-      window.addEventListener("devicemotion", onMotionChange, true);
-    }
-  });
-  window.addEventListener("devicemotion", onMotionChange, true);
+}
+
+function setResult(result) {
+  gyroscope();
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  resize();
+  popup();
+  swipe();
+  document.addEventListener("click", onClick);
 });
 
 //   let pos = 0;
