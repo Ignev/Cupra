@@ -72,6 +72,20 @@ window.addEventListener("DOMContentLoaded", () => {
   function onMotionChange(e) {
     var ag = e.accelerationIncludingGravity;
     if(ag.x < 0){
+      if(currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)){
+        currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
+      }
+      else{
+          currentPosition -= sizeBgContainer - onePercentBgSize;
+      }
+      if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
+        bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
+      }
+      else{
+        bg.style.right = `${currentPosition}px`;
+      }
+    }
+    else if(ag.x > 0){
       if(currentPosition >= 0){
         currentPosition = 0;
       }
@@ -81,20 +95,6 @@ window.addEventListener("DOMContentLoaded", () => {
       
       if(+bg.style.right.split("px")[0] >= 0){
         bg.style.right = `${0}px`;
-      }
-      else{
-        bg.style.right = `${currentPosition}px`;
-      }
-    }
-    else if(ag.x > 0){
-      if(currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)){
-        currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
-      }
-      else{
-          currentPosition -= sizeBgContainer - onePercentBgSize;
-      }
-      if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
-        bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
       }
       else{
         bg.style.right = `${currentPosition}px`;
