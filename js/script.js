@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", () => {
-  screen.orientation.lock();
   // Swipe
 
   let sizeBgContainer = bg.offsetWidth;
