@@ -119,6 +119,7 @@ window.addEventListener("DOMContentLoaded", () => {
       window.addEventListener("devicemotion", onMotionChange, true);
     }
   });
+  window.addEventListener("devicemotion", onMotionChange, true);
 });
 
 //   let pos = 0;
