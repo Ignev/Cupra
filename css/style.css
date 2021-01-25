@@ -25,7 +25,7 @@ body {
   align-items: center;
   color: #fff;
   font-family: "Cupra";
-  overflow:hidden;
+  overflow: hidden;
 }
 button {
   background: 0;
@@ -56,22 +56,43 @@ button {
   justify-content: flex-end;
   padding: 10px;
 }
-.bg{
+
+/* Car */
+
+.bg {
   height: 100%;
   position: absolute;
-  /* right: -50%; */
   top: 0;
   z-index: -1;
   transition: 1s ease;
-  overflow:hidden;
+  overflow: hidden;
+  transition: 1s ease;
 }
-.bg__media{
+.bg__media {
   height: 100%;
+  top: 0;
+  left: 0;
+}
+.bg__media-anime{
+  animation: fade 3s ease;
+  opacity: 0;
+  position: absolute;
+}
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 
 /* Popup */
 
-.content__popup{
+.content__popup {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -84,56 +105,59 @@ button {
   top: 0;
   left: 0;
 }
-.popup__close{
+.popup__close {
   position: absolute;
   top: 5px;
   right: 5px;
   width: 20px;
   height: 20px;
 }
-.close__media{
+.close__media {
   fill: #fff;
 }
 /* Top content */
 
-.content__text{
+.content__text {
   font-size: 7vw;
   margin-bottom: 20px;
   font-family: "Cupra";
   text-transform: uppercase;
   color: #fff;
 }
-.content__btn{
+.content__btn {
   width: 50%;
 }
-.btn__media{
+.btn__media {
   width: 100%;
 }
 
 /* Bottom content */
 
-.content__bottom{
+.content__bottom {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
 }
-.bottom__text{
+.bottom__text {
   font-size: 2vw;
   margin-bottom: 15px;
   color: #fff;
 }
-.bottom__logo{
+.text__btn {
+  text-decoration: underline;
+}
+.bottom__logo {
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 }
-.logo__media{
+.logo__media {
   width: 100%;
   height: 100%;
 }
-@media screen and (max-width: 1080px) and (orientation: portrait){
+@media screen and (max-width: 1080px) and (orientation: portrait) {
   .phone {
     width: 100%;
     height: 100vh;
@@ -146,13 +170,12 @@ button {
   .phone__media {
     display: none;
   }
-  .content{
+  .content {
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
   }
-  
 }
 
 /*

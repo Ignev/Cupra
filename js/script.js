@@ -104,6 +104,17 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   window.addEventListener('devicemotion', onMotionChange, true);
 
+  /* Headlights */
+
+  // setTimeout(()=>{
+  //   document.querySelector(".bg").innerHTML = '<img src="img/car1.jpg" alt="" class="bg__media" />';
+  // }, 1000)
+  // setTimeout(()=>{
+  //   document.querySelector(".bg").innerHTML = '<img src="img/car.jpg" alt="" class="bg__media bg__media-anim" />';
+  // }, 3000)
+  // // document.querySelector(".bg").innerHTML = '<img src="img/car.jpg" alt="" class="bg__media" />';
+ 
+
 
 });
 
