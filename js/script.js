@@ -72,20 +72,6 @@ window.addEventListener("DOMContentLoaded", () => {
   function onMotionChange(e) {
     var ag = e.accelerationIncludingGravity;
     if(ag.x < 0){
-      if(currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)){
-        currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
-      }
-      else{
-          currentPosition -= sizeBgContainer - onePercentBgSize;
-      }
-      if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
-        bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
-      }
-      else{
-        bg.style.right = `${currentPosition}px`;
-      }
-    }
-    else if(ag.x > 0){
       if(currentPosition >= 0){
         currentPosition = 0;
       }
@@ -100,20 +86,23 @@ window.addEventListener("DOMContentLoaded", () => {
         bg.style.right = `${currentPosition}px`;
       }
     }
+    else if(ag.x > 0){
+      if(currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)){
+        currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
+      }
+      else{
+          currentPosition -= sizeBgContainer - onePercentBgSize;
+      }
+      if(+bg.style.right.split("px")[0] <= -(sizeBgContainer - onePercentBgSize * 35)){
+        bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
+      }
+      else{
+        bg.style.right = `${currentPosition}px`;
+      }
+    }
 
   }
   window.addEventListener('devicemotion', onMotionChange, true);
-
-  /* Headlights */
-
-  // setTimeout(()=>{
-  //   document.querySelector(".bg").innerHTML = '<img src="img/car1.jpg" alt="" class="bg__media" />';
-  // }, 1000)
-  // setTimeout(()=>{
-  //   document.querySelector(".bg").innerHTML = '<img src="img/car.jpg" alt="" class="bg__media bg__media-anim" />';
-  // }, 3000)
-  // // document.querySelector(".bg").innerHTML = '<img src="img/car.jpg" alt="" class="bg__media" />';
- 
 
 
 });
