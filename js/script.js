@@ -102,9 +102,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
   }
-  window.addEventListener('click', ()=>
-  {
-    // feature detect
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
       DeviceMotionEvent.requestPermission()
         .then(permissionState => {
@@ -114,10 +111,8 @@ window.addEventListener("DOMContentLoaded", () => {
         })
         .catch(console.error);
     } else {
-      // handle regular non iOS 13+ devices
+      window.addEventListener('devicemotion', onMotionChange, true);
     }
-  }) 
-  
 
 
 });
