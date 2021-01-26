@@ -1,9 +1,9 @@
 let sizeBgContainer = bg.offsetWidth;
-  let onePercentBgSize = sizeBgContainer / 100;
-  bg.style.right = -onePercentBgSize * 15 + "px";
-  let currentPosition = -onePercentBgSize * 15;
+let onePercentBgSize = sizeBgContainer / 100;
+bg.style.right = -onePercentBgSize * 15 + "px";
+let currentPosition = -onePercentBgSize * 15;
 
-  // Swipe
+// Swipe
 
 const swipe = () => {
   Hammer(content).on("panright", (e) => {
@@ -38,9 +38,9 @@ const swipe = () => {
     }
     console.log(currentPosition);
   });
-}
+};
 
- // Fix bug resize smartphone
+// Fix bug resize smartphone
 
 const resize = () => {
   let vh = window.innerHeight * 0.01;
@@ -50,7 +50,7 @@ const resize = () => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
   });
-}
+};
 
 // Popup
 
@@ -62,62 +62,65 @@ const popup = () => {
   popup__close.addEventListener("click", () => {
     content__popup.style.display = "none";
   });
-}
+};
 
 // Gyroscope
 
 const gyroscope = (e) => {
-    var ag = e.accelerationIncludingGravity;
-    if (ag.x < 0) {
-      if (currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)) {
-        currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
-      } else {
-        currentPosition -= sizeBgContainer - onePercentBgSize;
-      }
-      if (
-        +bg.style.right.split("px")[0] <=
-        -(sizeBgContainer - onePercentBgSize * 35)
-      ) {
-        bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
-      } else {
-        bg.style.right = `${currentPosition}px`;
-      }
-    } else if (ag.x > 0) {
-      if (currentPosition >= 0) {
-        currentPosition = 0;
-      } else {
-        currentPosition += sizeBgContainer - onePercentBgSize;
-      }
-
-      if (+bg.style.right.split("px")[0] >= 0) {
-        bg.style.right = `${0}px`;
-      } else {
-        bg.style.right = `${currentPosition}px`;
-      }
+  var ag = e.accelerationIncludingGravity;
+  if (ag.x < 0) {
+    if (currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)) {
+      currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
+    } else {
+      currentPosition -= sizeBgContainer - onePercentBgSize;
     }
-}
+    if (
+      +bg.style.right.split("px")[0] <=
+      -(sizeBgContainer - onePercentBgSize * 35)
+    ) {
+      bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
+    } else {
+      bg.style.right = `${currentPosition}px`;
+    }
+    console.log(currentPosition);
+    console.log(+bg.style.right.split("px")[0]);
+  } else if (ag.x > 0) {
+    if (currentPosition >= 0) {
+      currentPosition = 0;
+    } else {
+      currentPosition += sizeBgContainer - onePercentBgSize;
+    }
+
+    if (+bg.style.right.split("px")[0] >= 0) {
+      bg.style.right = `${0}px`;
+    } else {
+      bg.style.right = `${currentPosition}px`;
+    }
+    console.log(currentPosition);
+    console.log(+bg.style.right.split("px")[0]);
+  }
+};
 
 // Test Gyroscope
 
 function onClick() {
   // feature detect
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
+  if (typeof DeviceMotionEvent.requestPermission === "function") {
     DeviceMotionEvent.requestPermission()
-      .then(permissionState => {
-        if (permissionState === 'granted') {
-          window.addEventListener('devicemotion', gyroscope, true);
+      .then((permissionState) => {
+        if (permissionState === "granted") {
+          window.addEventListener("devicemotion", gyroscope, true);
         }
       })
       .catch(console.error);
   } else {
-    window.addEventListener('devicemotion', gyroscope, true);
+    window.addEventListener("devicemotion", gyroscope, true);
   }
 }
 
 function setResult(result) {
   gyroscope();
 }
-
 
 window.addEventListener("DOMContentLoaded", () => {
   resize();
