@@ -1,40 +1,36 @@
 let sizeBgContainer = bg.offsetWidth;
 let onePercentBgSize = sizeBgContainer / 100;
-bg.style.right = -onePercentBgSize * 15 + "px";
-let currentPosition = -onePercentBgSize * 15;
+let currentPosition = -50;
 
 // Swipe
 
 const swipe = () => {
   Hammer(content).on("panright", (e) => {
-    if (currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)) {
-      currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
+    if (currentPosition <= -270) {
+      currentPosition = -270;
     } else {
-      currentPosition -= (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
+      currentPosition -= 5;
     }
-    if (
-      +bg.style.right.split("px")[0] <=
-      -(sizeBgContainer - onePercentBgSize * 35)
-    ) {
-      bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
+    if (+bg.style.right.split("%")[0] <= -270) {
+      bg.style.right = `${-270}%`;
     } else {
-      bg.style.right = `${currentPosition}px`;
+      bg.style.right = `${currentPosition}%`;
     }
     console.log(currentPosition);
-    console.log(+bg.style.right.split("px")[0]);
+    console.log(+bg.style.right.split("%")[0]);
   });
 
   Hammer(content).on("panleft", (e) => {
     if (currentPosition >= 0) {
       currentPosition = 0;
     } else {
-      currentPosition += (Math.abs(e.deltaX) * 100 * 2) / sizeBgContainer;
+      currentPosition += 5;
     }
 
-    if (+bg.style.right.split("px")[0] >= 0) {
-      bg.style.right = `${0}px`;
+    if (+bg.style.right.split("%")[0] >= 0) {
+      bg.style.right = `${0}%`;
     } else {
-      bg.style.right = `${currentPosition}px`;
+      bg.style.right = `${currentPosition}%`;
     }
     console.log(currentPosition);
   });
@@ -69,35 +65,31 @@ const popup = () => {
 const gyroscope = (e) => {
   var ag = e.accelerationIncludingGravity;
   if (ag.x < 0) {
-    if (currentPosition <= -(sizeBgContainer - onePercentBgSize * 35)) {
-      currentPosition = -(sizeBgContainer - onePercentBgSize * 35);
+    if (currentPosition <= -270) {
+      currentPosition = -270;
     } else {
-      currentPosition -= sizeBgContainer - onePercentBgSize;
+      currentPosition -= 5;
     }
-    if (
-      +bg.style.right.split("px")[0] <=
-      -(sizeBgContainer - onePercentBgSize * 35)
-    ) {
-      bg.style.right = `${-(sizeBgContainer - onePercentBgSize * 35)}px`;
+    if (+bg.style.right.split("%")[0] <= -270) {
+      bg.style.right = `${-270}%`;
     } else {
-      bg.style.right = `${currentPosition}px`;
+      bg.style.right = `${currentPosition}%`;
     }
     console.log(currentPosition);
-    console.log(+bg.style.right.split("px")[0]);
+    console.log(+bg.style.right.split("%")[0]);
   } else if (ag.x > 0) {
     if (currentPosition >= 0) {
       currentPosition = 0;
     } else {
-      currentPosition += sizeBgContainer - onePercentBgSize;
+      currentPosition += 5;
     }
 
-    if (+bg.style.right.split("px")[0] >= 0) {
-      bg.style.right = `${0}px`;
+    if (+bg.style.right.split("%")[0] >= 0) {
+      bg.style.right = `${0}%`;
     } else {
-      bg.style.right = `${currentPosition}px`;
+      bg.style.right = `${currentPosition}%`;
     }
     console.log(currentPosition);
-    console.log(+bg.style.right.split("px")[0]);
   }
 };
 

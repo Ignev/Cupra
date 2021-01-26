@@ -63,6 +63,7 @@ button {
   height: 100%;
   position: absolute;
   top: 0;
+  right: -50%;
   z-index: -1;
   transition: 1s ease;
   overflow: hidden;
