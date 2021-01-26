@@ -71,8 +71,6 @@ button {
 }
 .bg__media {
   height: 100%;
-  top: 0;
-  left: 0;
 }
 .bg__media-anime{
   animation: fade 2s ease;

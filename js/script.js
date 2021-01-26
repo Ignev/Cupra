@@ -1,5 +1,3 @@
-let sizeBgContainer = bg.offsetWidth;
-let onePercentBgSize = sizeBgContainer / 100;
 let currentPosition = -50;
 
 // Swipe
