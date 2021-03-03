@@ -2,58 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
     <div class="phone">
-      <img src="img/iPhone6SPlus.png" alt="phone" class="phone__media" />
-      <div class="bg" id="bg">
-        <img src="img/car1.jpg" alt="" class="bg__media bg__media-anime " />
-          <img src="img/car.jpg" alt="" class="bg__media" />
-          
-        </div>
-      <div class="content" id="content">
-        <div class="content__popup" id="content__popup">
-          <button class="popup__close" id="popup__close">
-            <img src="img/close.svg" alt="close" class="close__media" />
-          </button>
-          <p class="popup__text">
-            Weitere Informationen zum offiziellen Kraftstoffverbrauch und den
-            offiziellen, spezifischen CO₂-Emissionen neuer Personenkraftwagen
-            können dem „Leitfaden über den Kraftstoffverbrauch, die
-            CO₂-Emissionen und den Stromverbrauch neuer Personenkraftwagen“
-            entnommen werden, der an allen Verkaufsstellen und bei der DAT
-            Deutsche Automobil Treuhand GmbH, Hellmuth-Hirth-Str. 1, D-73760
-            Ostfildern-Scharnhausen oder unter www.dat.de unentgeltlich
-            erhältlich ist.
-          </p>
-        </div>
-        <div class="content__text" id="test">
-          Der neue <br />
-          CUPRA Formentor.
-        </div>
-        <button class="content__btn" id="button">
-          <img class="btn__media" src="img/button.png" alt="button" id="button-img" />
-        </button>
-        <div class="content__bottom">
-          <div class="bottom__text">
-            CUPRA Formentor 2.0 TSI 228 kW <br />
-            (310 PS): Kraftstoffverbrauch <br />
-            Benzin, kombiniert: 7,7 l/100km; <br />
-            CO₂-Emissionen, kombiniert: <br />
-            175 g/km; CO₂-Effizienzklasse: D*. <br />
-            Abb. zeigt Sonderausstattung. <br />
-            <span class="text__btn" id="text__btn">DAT-Hinweis</span>
+      <img src="img/iPhone6SPlus.png" alt="" class="phone__media" />
+      <div class="container" id="container">
+          <div class="bg">
+              <img src="img/car.jpg" alt="background" class="bg__media">
           </div>
-          <div class="bottom__logo">
-            <img src="img/logo.svg" alt="logo" class="logo__media" />
+          <div class="content">
+            <div class="top">
+                <div class="top__text"></div>
+                <button class="top__btn">
+                    <img src="./img/button.png" alt="" class="btn__media">
+                </button>
+            </div>
+            <div class="bottom"></div>
           </div>
-        </div>
       </div>
     </div>
-    <script src="js/hammer.js"></script>
-    <script src="js/script.js"></script>
+    <script src="script/script.js"></script>
   </body>
 </html>
