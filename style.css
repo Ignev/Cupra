@@ -1,0 +1,196 @@
+
+@font-face {
+  font-family: "Cupra-Regular";
+  src: url("./fonts/Cupra-Regular.woff2") format("woff2"),
+  url("./fonts/Cupra-Regular.woff") format("woff");
+}
+#content2{
+  position: absolute;
+  width:100%;
+  height:100%;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.overlay{
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000000;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  display: none;
+}
+
+#close {
+  position: absolute;
+
+  width: 7%;
+  right: 50px;
+  top: 50px;
+}
+.textOverlay {
+  position: absolute;
+  font-family: 'Cupra-Regular';
+  font-size: 50px;
+  font-size: 5vw;
+  width: 80%;
+  height: 65%;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#textLigal2{
+  text-decoration:underline;
+}
+
+
+#container1 {
+  position: relative;
+}
+#title {
+
+  font-family: 'Cupra-Regular';
+  font-size: 70px;
+  font-style: normal;
+  text-transform: uppercase;
+  line-height: 1.067;
+
+}
+
+#bottom_info{
+  position: absolute;
+  left: 50px;
+  right: 50px;
+  bottom: 120px;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+#description {
+
+  width: 50%;
+  left: 0px;
+  bottom: 0px;
+  font-family: 'Cupra-Regular';
+  font-size: 20px;
+  font-style: normal;
+}
+
+#cta{
+  width: 50%;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+#logo {
+  position: absolute;
+  width: 25%;
+  right: 75px;
+  bottom: 120px;
+
+}
+#help_icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  margin-top: -10%;
+
+  background-color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  text-align: center;
+  width: 400px;
+  height: auto;
+}
+
+#face_icon {
+  width: 400px;
+  height: auto;
+}
+
+.caption {
+  display: block;
+}
+
+#help_icon2{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 800px;
+}
+
+a {color: white; text-decoration: none}
+a:hover {color: white;}
+body {overflow: auto; overflow-y: auto;
+  background-color: black;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  margin: 0px;
+  font-family: 'Cupra-Regular';
+  font-size: 60px;
+  font-style: normal;
+  color: white;
+}
+
+* { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+canvas { display:block; } /* To remove the scrollbars */
+
+#jeeFaceFilterCanvas {
+  z-index: 10;
+  position: absolute; 
+  max-height: 128px;
+  max-width: 128px;
+  left: 0px;
+  top: 0px;
+  transform: rotateY(180deg) ;
+  display: none;
+}
+
+@media (max-width: 787px) {
+  #jeeFaceFilterCanvas {
+    right: 0px;
+    top: 60px;
+     transform: rotateY(180deg);
+  }
+}
+
+#button_test_api {
+  position: absolute;
+  display: none;
+  align-items: center;
+  font-size: 3vw;
+  z-index: 9999999;
+  color: #fff;
+  bottom: 0;
+  font-family: Arial;
+  left: 50%;
+  line-height: 1.3;
+  width: 100%;
+  padding: 3vw;
+  transform: translateX(-50%);
+  background: #111;
+  z-index: 9999;
+}
+
+#button_test_api span {
+  padding: 3vw;
+  border: 1px solid #fff;
+  text-align: center;
+  width: 50%;
+  display: block;
+  white-space: nowrap;
+}

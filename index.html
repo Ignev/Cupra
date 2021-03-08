@@ -1,30 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style/style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="en-EN" />
+
+    <title></title>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
   </head>
-  <body>
-    <div class="phone">
-      <img src="img/iPhone6SPlus.png" alt="" class="phone__media" />
-      <div class="container" id="container">
-          <div class="bg">
-              <img src="img/car.jpg" alt="background" class="bg__media">
-          </div>
-          <div class="content">
-            <div class="top">
-                <div class="top__text"></div>
-                <button class="top__btn">
-                    <img src="./img/button.png" alt="" class="btn__media">
-                </button>
-            </div>
-            <div class="bottom"></div>
-          </div>
-      </div>
+
+  <body onload="preload('')">
+  <div id="content">
+    <canvas id="car"></canvas>
+
+    <div id="bottom_info">
+      <div id="title">Der neue <br/>CUPRA Formentor.</div>
+      <img id="cta" src="images/cta.png">
+      <div id="description">CUPRA Formentor 2.0 TSI 228 kW (310 PS): Kraftstoffverbrauch Benzin, kombiniert: 7,7 l/100km; CO₂-Emissionen, kombiniert: 175 g/km; CO₂-Effizienzklasse: D*. Abb. zeigt Sonderausstattung. <span id="textLigal2">DAT-Hinweis</span></div>
+
     </div>
-    <script src="script/script.js"></script>
+    <img id="logo" src="images/logo.png">
+    <div id="help_icon">
+      <img id="face_icon" src="images/indicator-move.png">
+    </div>
+    <div id="button_test_api">Aktiviere für das volle Erlebnis deine Bewegungssteuerung <span>Jetzt aktivieren</span></div>
+    <div class="overlay" id="overlay">
+      <img id="close" src="images/close.png"></img>
+      <div class="textOverlay">Weitere Informationen zum offiziellen Kraftstoffverbrauch und den offiziellen, spezifischen CO₂-Emissionen neuer Personenkraftwagen können dem „Leitfaden über den Kraftstoffverbrauch, die CO₂-Emissionen und den Stromverbrauch neuer Personenkraftwagen“ entnommen werden, der an allen Verkaufsstellen und bei der DAT Deutsche Automobil Treuhand GmbH, Hellmuth-Hirth-Str. 1, D-73760 Ostfildern-Scharnhausen oder unter www.dat.de unentgeltlich erhältlich ist.</div>
+    </div>
+  </div>
+
+  <script src="js/fulltilt.min.js"></script>
+  <script src="js/drag.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+
+    var x_click = document.getElementsByTagName('body')[0];
+    x_click.addEventListener("click", clickout_1);
+
+
+    var textLigal2 = document.getElementById('textLigal2');
+    var overlay = document.getElementById('overlay');
+    var close = document.getElementById('close');
+
+    textLigal2.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      overlay.setAttribute("style", "display: block");
+      textLigal2.setAttribute("style", "opacity: 0; transition: 0.5s;");
+    });
+
+    close.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      overlay.setAttribute("style", "opacity: 0");
+      textLigal2.setAttribute("style", "opacity: 1; transition: 0.5s;");
+    });
+
+    var isInterstitial = true;
+    var avgVStart = 0.01;
+    var avgVEnd = 0.0;
+    var clickTag="";
+    var dspx_debug = readGETParameter("dspx_debug");
+    function readGETParameter(c){var o=window.location.search.substring(1);var n=o.split("&");for(var e=0;e<n.length;e++){var i=n[e].split("=");if(i[0]==c){return decodeURIComponent(i[1])}}return c=="encodelevel"?2:0}
+    function fireASCClicks(){var _c="dspx_clicktagASC",_nn=5;var cASC=function(c,nn){var n=window.location.search.substring(1),i=n.split("&");var aa=[];for(var e=0;e<i.length;e++){var o=i[e].split("=");for(var ni=0;ni<nn;ni++){if(ni==0)cc=c;else cc=c+ni;if(o[0]==cc){aa.push(decodeURIComponent(o[1]))}}}return aa};var ctASC=cASC(_c,_nn);for(i=0;i<ctASC.length;i++){if(dspx_debug==1)console.log("fire Click ASC:"+ctASC[i]);(new Image).src=ctASC[i]}}
+    function clickout_1(){
+      fireASCClicks();
+      var e=clickTag;
+      if(dspx_debug==1){console.log(e);}
+      window.open(e)
+    }
+
+  </script>
+
   </body>
 </html>
