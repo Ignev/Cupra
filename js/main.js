@@ -131,6 +131,7 @@ function loadDone(){
 
 function testDeviceOrientation() {
   if (typeof DeviceOrientationEvent !== 'function') {
+    alert("DeviceOrientationEvent not detected");
     return setResult('DeviceOrientationEvent not detected')
   }
   if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
