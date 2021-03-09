@@ -130,14 +130,14 @@ function loadDone(){
 }
 
 function testDeviceOrientation() {
-  document.getElementById('button_test_api').style.display="flex";
+  
   if (typeof DeviceOrientationEvent !== 'function') {
+    document.getElementById('button_test_api').style.display="flex";
     document.getElementById('button_test_api').addEventListener('click',function(e){
       e.preventDefault();
       e.stopPropagation();
       document.getElementById('button_test_api').style.display = "none";
       DeviceOrientationEvent.requestPermission().then(function(result) {
-        
         return setResult(result);
       });
     });
