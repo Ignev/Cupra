@@ -131,14 +131,16 @@ function loadDone(){
 
 function testDeviceOrientation() {
   if (typeof DeviceOrientationEvent !== 'function') {
-    
+    alert("Geben Sie in den Einstellungen Zugriff auf den Bewegungssensor");
     return setResult('DeviceOrientationEvent not detected')
   }
   if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
+    
     return setResult('DeviceOrientationEvent.requestPermission not detected')
+    
   }
   document.getElementById('button_test_api').style.display="flex";
-  alert("DeviceOrientationEvent not detected");
+  
   document.getElementById('button_test_api').addEventListener('click',function(e){
     e.preventDefault();
     e.stopPropagation();
@@ -148,7 +150,7 @@ function testDeviceOrientation() {
     });
   });
 }
-
+  
 function setResult(result) {
   main();
 }
