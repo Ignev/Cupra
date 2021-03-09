@@ -130,8 +130,17 @@ function loadDone(){
 }
 
 function testDeviceOrientation() {
+  document.getElementById('button_test_api').style.display="flex";
   if (typeof DeviceOrientationEvent !== 'function') {
-    alert("Geben Sie in den Einstellungen Zugriff auf den Bewegungssensor");
+    document.getElementById('button_test_api').addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      document.getElementById('button_test_api').style.display = "none";
+      DeviceOrientationEvent.requestPermission().then(function(result) {
+        
+        return setResult(result);
+      });
+    });
     return setResult('DeviceOrientationEvent not detected')
   }
   if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
