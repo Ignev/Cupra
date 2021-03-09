@@ -131,13 +131,14 @@ function loadDone(){
 
 function testDeviceOrientation() {
   if (typeof DeviceOrientationEvent !== 'function') {
-    alert("DeviceOrientationEvent not detected");
+    
     return setResult('DeviceOrientationEvent not detected')
   }
   if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
     return setResult('DeviceOrientationEvent.requestPermission not detected')
   }
   document.getElementById('button_test_api').style.display="flex";
+  alert("DeviceOrientationEvent not detected");
   document.getElementById('button_test_api').addEventListener('click',function(e){
     e.preventDefault();
     e.stopPropagation();
