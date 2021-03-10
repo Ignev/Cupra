@@ -132,8 +132,6 @@ function loadDone(){
 function testDeviceOrientation() {
   if (!window.DeviceOrientationEvent) {
     alert("No");
-  }
-  if (typeof DeviceOrientationEvent !== 'function') {
     document.getElementById('button_test_api').innerHTML = "Give access to the gyroscope in the browser settings";
     document.getElementById('button_test_api').style.display="flex";
     console.log(2);
@@ -145,6 +143,9 @@ function testDeviceOrientation() {
         return setResult(result);
       });
     });
+  }
+  if (typeof DeviceOrientationEvent !== 'function') {
+    
     return setResult('DeviceOrientationEvent not detected')
   }
   if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
