@@ -132,6 +132,7 @@ function loadDone(){
 function testDeviceOrientation() {
   
   if (typeof DeviceOrientationEvent !== 'function') {
+    document.getElementById('button_test_api').innerHTML = "Give access to the gyroscope in the browser settings";
     document.getElementById('button_test_api').style.display="flex";
     document.getElementById('button_test_api').addEventListener('click',function(e){
       e.preventDefault();
